@@ -4,7 +4,7 @@
             <ng-container *ngFor="let c of getCoursesByCurrentFaculty()">
             <div class="col" [routerLink]="'./'+c.CID+'/landing'" [queryParams]="{'CID':c.CID}">
             <div class="card h-100 rounded-4" id="coursecard">
-                <img src="https://res.cloudinary.com/dadhpdkco/image/upload/v1682589171/CMS/Course_igxmua.jpg" class="card-img-top" alt="...">
+                <img src="https://res.cloudinary.com/movie-booking-site/image/upload/v1682589171/CMS/Course_igxmua.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">{{c.Name}}</h5>
                 <p class="card-text">{{c.Description}}</p>
