@@ -1,0 +1,12 @@
+<div class="h-full p-8 overflow-hidden">
+  <div class="flex items-center justify-center">
+    <img class="h-16 mb-52" src="https://res.cloudinary.com/movie-booking-site/image/upload/v1686649199/movie/bookMyShow_d2qjca.png" alt="Book My Show">
+  </div>
+  <div class="flex items-center justify-center ">
+      <div class="bg-red-500 text-white rounded p-4">
+        <h2 class="text-xl font-bold mb-2">Server Connection Failed</h2>
+        <p class="text-sm">Oops! It seems that we are unable to establish a connection to the server. Please check your internet connection and try again.</p>
+        <button class="bg-white text-red-500 mt-4 px-4 py-2 rounded border border-red-500 font-semibold hover:bg-red-500 hover:border-slate-50 hover:border-2 hover:text-white transition duration-300 ease-in-out" (click)="onRetry()">Retry</button>
+      </div>
+  </div>
+</div>

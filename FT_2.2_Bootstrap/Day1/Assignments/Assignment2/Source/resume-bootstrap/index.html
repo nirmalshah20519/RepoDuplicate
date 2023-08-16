@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+    html, body{
+      height: 100%;
+    }
+    body{
+      background-image: linear-gradient(0deg, #fddb92 0%, #d1fdff 100%);
+      background-attachment: fixed;
+    }
+
+    .bg-1{
+      background-color: #bce3e6;
+    }
+    .bg-2{
+      background-color: #d1fdff;
+
+    }
+
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+      background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+      color: white !important;
+    }
+
+    .nav-link:hover{
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)!important;
+      color: white!important;
+    }
+
+    .list-group-item:hover {
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 100%
+        ) !important;
+        color: white !important;
+      }
+
+  </style>
+  <title>Resume Bootstrap</title>
+</head>
+
+<body>
+  <div class="container-md mb-5 py-5">
+    <div class="row">
+      <div class="col-lg-4 col-12 ">
+        <nav class="navbar navbar-expand-lg mt-3 " aria-label="Navbar2">
+          <div class="container d-flex flex-column row">
+            <a href="#" class="navbar-brand col-12">
+              <div class="d-flex justify-content-center">
+                <img class="w-50 border border-4 border-primary rounded-circle"
+                  src="https://tse2.mm.bing.net/th/id/OIP.3Z9HYaJYKGL76Kol2VoSsQHaHZ?pid=ImgDet&rs=1"
+                  alt="Profile Picture">
+              </div>
+              <div>
+                <p class="display-3 text-center">Nirmal Shah</p>
+                <p class="h6 text-center">9374627351 | nirmalshah20519@gmail.com</p>
+              </div>
+            </a>
+            <button class="navbar-toggler w-25" data-bs-toggle="collapse" data-bs-target="#pills-tab">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse col-12 row" id="pills-tab" role="tablist">
+              <ul class="navbar-nav list-group nav-pills d-flex flex-md-column col-12">
+                <li class="nav-item list-group-item border border-1 border-dark rounded-2 my-2 bg-transparent p-0">
+                  <a class="nav-link text-dark fw-semibold px-2 active" id="careerObj-tab" data-bs-toggle="pill" href="#careerObj" role="tab"
+                    aria-controls="pills-careerObj" aria-selected="true">Career Objective</a>
+                </li>
+                <li class="nav-item list-group-item border border-1 border-dark rounded-2 my-2 bg-transparent p-0">
+                  <a class="nav-link text-dark fw-semibold px-2" id="edu-tab" data-bs-toggle="pill" href="#edu" role="tab"
+                    aria-controls="pills-edu" aria-selected="false">Education</a>
+                </li>
+                <li class="nav-item list-group-item border border-1 border-dark rounded-2 my-2 bg-transparent p-0">
+                  <a class="nav-link text-dark fw-semibold px-2" id="perSkill-tab" data-bs-toggle="pill" href="#perSkill" role="tab"
+                    aria-controls="pills-services" aria-selected="false">Personal Skills</a>
+                </li>
+                <li class="nav-item list-group-item border border-1 border-dark rounded-2 my-2 bg-transparent p-0">
+                  <a class="nav-link text-dark fw-semibold px-2" id="pills-contact-tab" data-bs-toggle="pill" href="#tecSkill" role="tab"
+                    aria-controls="pills-contact" aria-selected="false">Technical Skills</a>
+                </li>
+                <li class="nav-item list-group-item border border-1 border-dark rounded-2 my-2 bg-transparent p-0">
+                  <a class="nav-link text-dark fw-semibold px-2" id="expAchieve-tab" data-bs-toggle="pill" href="#expAchieve" role="tab"
+                    aria-controls="pills-contact" aria-selected="false">Experience & Achievements</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="col-lg-8 col-12">
+        <div class="container">
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="careerObj" role="tabpanel" aria-labelledby="careerObj-tab">
+              <div>
+                <h2 class="display-5 fw-normal text-primary">Career Objective</h2>
+                <ul class="list-group">
+                  <li class="list-group-item bg-2 text-dark">Seeking a challenging career with a progressive organization that provides an opportunity to capitalize my technical skills & abilities in the field of information technology (IT).</li>
+                  <li class="list-group-item bg-1 text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum minima cum harum! Porro illo molestias corrupti asperiores non accusantium obcaecati laudantium, quod exercitationem tenetur ratione sit possimus commodi vero quam.</li>
+                  <li class="list-group-item bg-2 text-dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, voluptatem ratione. Ratione, reiciendis numquam suscipit debitis vero ipsum vel culpa laborum quod, aperiam ut ex! Earum omnis distinctio officiis dolore?</li>
+                </ul>                
+              </div>
+            </div>
+            <div class="tab-pane fade" id="edu" role="tabpanel" aria-labelledby="edu-tab">
+              <div>
+                <h2 class="display-5 fw-normal text-primary">Education</h2>
+                <ul class="list-group">
+                  <li class="list-group-item  bg-2 text-dark">
+                    <p class="text-justify">Bachelors of Engineering in Computer Science (2019-2023) <br>
+                      Government Engineering College Patan <br>
+                      AT & POST Katpur, Patan 384265</p>
+                  </li>
+                  <li class="list-group-item  bg-1 text-dark">
+                    <p class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga,
+                      perspiciatis? Perspiciatis itaque ex, pariatur in ipsam tempora ad, ut adipisci voluptatibus
+                      ratione quaerat illo dolores rem? Quos numquam optio dolorem?</p>
+                  </li>
+                  <li class="list-group-item  bg-2 text-dark">
+                    <p class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga,
+                      perspiciatis? Perspiciatis itaque ex, pariatur in ipsam tempora ad, ut adipisci voluptatibus
+                      ratione quaerat illo dolores rem? Quos numquam optio dolorem?</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="perSkill" role="tabpanel" aria-labelledby="perSkill-tab">
+              <div>
+                <h2 class="display-5 fw-normal text-primary">Personal Skills</h2>
+                <ul class="list-group">
+                  <li class="list-group-item bg-2 text-dark">Excellent written and verbal communication skills.</li>
+                  <li class="list-group-item bg-1 text-dark">Highly organized and efficient.</li>
+                  <li class="list-group-item bg-2 text-dark">Ability to work independently or as part of a team.</li>
+                  <li class="list-group-item bg-1 text-dark">Quick Learner.</li>
+                  <li class="list-group-item bg-2 text-dark">Proven leadership skills and ability to motivate.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tecSkill" role="tabpanel" aria-labelledby="tecSkill-tab">
+              <div>
+                <h2 class="display-5 fw-normal text-primary">Technical Skills</h2>
+                <ul class="list-group">
+                  <li class="list-group-item bg-2 text-dark"> Hardware troubleshooting </li>
+                  <li class="list-group-item bg-1 text-dark"> Network troubleshooting </li>
+                  <li class="list-group-item bg-2 text-dark"> Programming (Java, C++, Visual Basic, Android Programming Language) </li>
+                  <li class="list-group-item bg-1 text-dark"> Microsoft Office (MS Word, Excel, Powerpoint, Internet, etc) </li>
+                  <li class="list-group-item bg-2 text-dark"> Adobe Creative Suite (Photoshop, InDesign, After Effects, Dreamweaver) </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="expAchieve" role="tabpanel" aria-labelledby="expAchieve-tab">
+              <div>
+                <h2 class="display-5 fw-normal text-primary">Experience</h2>
+                <ul class="list-group">
+                  <li class="list-group-item  bg-2 text-dark">
+                    <p class="fw-bold"> Research Intern (Feb 2022) </p>  Anon Global Foundation
+                  </li>
+                  <li class="list-group-item  bg-1 text-dark">
+                    <p class="fw-bold"> Web Developmer Intern (Jul 2022) </p>  Lets Grow More Foundation
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-5">
+                <h2 class="display-5 fw-normal text-primary">Achievements</h2>
+                <ul class="list-group">
+                  <li class="list-group-item  bg-2 text-dark">
+                    <p class="fw-bold"> GATE 2022 (IIT Kharagpur)  </p>  Qualified [AIR 11,299]
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

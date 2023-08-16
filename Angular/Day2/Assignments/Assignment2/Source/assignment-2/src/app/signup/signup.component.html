@@ -1,0 +1,47 @@
+<div class="container bg-dark">
+    <div class="p-3 text-white h1 text-center">
+      Sign Up
+    </div>
+    <P class="text-white" (click)="disp()">{{signUpData.value|json}}</P>
+    <form [formGroup]="signUpData" class="bg-warning text-white p-5 rounded-3">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text"
+          class="form-control" formControlName="Name" id="name" aria-describedby="helpId" placeholder="Enter Name">
+      </div>
+      <ng-container formGroupName="Address">
+        <p class="h3 mb-2">Address</p>
+        <div class="mb-3">
+          <label for="streetAddress" class="form-label">Flat No</label>
+          <input type="text"
+            class="form-control" formControlName="streetAddress" id="streetAddress" aria-describedby="helpId" placeholder="Enter Flat No">
+        </div>
+        <div class="mb-3">
+          <label for="city" class="form-label">City</label>
+          <input type="text"
+            class="form-control" formControlName="city" id="city" aria-describedby="helpId" placeholder="Enter City">
+        </div>
+        <div class="mb-3">
+          <label for="state" class="form-label">State</label>
+          <input type="text"
+            class="form-control" formControlName="state" id="state" aria-describedby="helpId" placeholder="Enter State">
+        </div>
+        <div class="mb-3">
+          <label for="country" class="form-label">country</label>
+          <input type="text"
+            class="form-control" formControlName="country" id="country" aria-describedby="helpId" placeholder="Enter country">
+        </div>
+        <div class="mb-3">
+          <label for="pincode" class="form-label">PAN</label>
+          <input type="number"
+            class="form-control" formControlName="pincode" id="pincode" aria-describedby="helpId" placeholder="Enter pincode">
+        </div>
+      </ng-container>
+      <div class="mb-3">
+        <label for="PAN" class="form-label">pincode</label>
+        <input type="text"
+          class="form-control" formControlName="PAN" id="PAN" aria-describedby="helpId" placeholder="Enter PAN">
+      </div>
+    </form>
+  
+  </div>

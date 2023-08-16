@@ -1,0 +1,90 @@
+<ng-container *ngIf="stuData;else elseBlk">
+    <div class="container">
+        <div class="row p-2">
+            <p class="display-3 fw-semibold text-light bg-dark">Student Detail : <{{stuData.ID}}></p>
+        </div>
+
+        <div class="row p-1 mx-2">
+            <div class="col-2">Name</div>
+            <div class="col-6 text-primary">{{stuData.Name.fname+' '+stuData.Name.mname+' '+stuData.Name.lname}}</div>
+            <div class="col-2">Date of Birth</div>
+            <div class="col-2 text-primary">{{stuData.DOB|date:'mediumDate'}}</div>
+        </div>
+        
+        <div class="row p-1 mx-2">
+            <div class="col-2">Place of Birth</div>
+            <div class="col-4 text-primary">{{stuData.PlaceOfBirth}}</div>
+            <div class="col-2">First Language</div>
+            <div class="col-4 text-primary">{{stuData.FirstLanguage}}</div>
+        </div>
+
+        <div class="row p-2">
+            <p class="display-5 fw-bold">Father's Detail :</p>
+        </div>
+
+        <div class="row p-1 mx-2">
+            <div class="col-2">Name</div>
+            <div class="col-6 text-primary">{{stuData.FatherDetails.Name.fname+' '+stuData.FatherDetails.Name.mname+' '+stuData.FatherDetails.Name.lname}}</div>
+            <div class="col-2">Education</div>
+            <div class="col-2 text-primary">{{stuData.FatherDetails.education}}</div>
+        </div>
+
+        <div class="row p-1 mx-2">
+            <div class="col-2">Profession</div>
+            <div class="col-4 text-primary">{{stuData.FatherDetails.profession}}</div>
+            <div class="col-2">Designation</div>
+            <div class="col-4 text-primary">{{stuData.FatherDetails.designation}}</div>
+        </div>
+
+        <div class="row p-1 mx-2">
+            <div class="col-2">Contact No</div>
+            <div class="col-4 text-primary">{{stuData.FatherDetails.phone}}</div>
+            <div class="col-2">Email</div>
+            <div class="col-4 text-primary">{{stuData.FatherDetails.email}}</div>
+        </div>
+
+        <div class="row p-2">
+            <p class="display-5 fw-bold">Mother's Detail :</p>
+        </div>
+
+        <div class="row p-1 mx-2">
+            <div class="col-2">Name</div>
+            <div class="col-6 text-primary">{{stuData.MotherDetails.Name.fname+' '+stuData.MotherDetails.Name.mname+' '+stuData.MotherDetails.Name.lname}}</div>
+            <div class="col-2">Education</div>
+            <div class="col-2 text-primary">{{stuData.MotherDetails.education}}</div>
+        </div>
+
+        <div class="row p-1 mx-2">
+            <div class="col-2">Profession</div>
+            <div class="col-4 text-primary">{{stuData.MotherDetails.profession}}</div>
+            <div class="col-2">Designation</div>
+            <div class="col-4 text-primary">{{stuData.MotherDetails.designation}}</div>
+        </div>
+
+        <div class="row p-1 mx-2">
+            <div class="col-2">Contact No</div>
+            <div class="col-4 text-primary">{{stuData.MotherDetails.phone}}</div>
+            <div class="col-2">Email</div>
+            <div class="col-4 text-primary">{{stuData.MotherDetails.email}}</div>
+        </div>
+
+        <div class="row p-2">
+            <p class="display-5 fw-bold">Emergency Contacts :</p>            
+        </div>
+
+        <div class="row p-1">
+            <ng-container *ngFor="let item of stuData.EmergencyContact">
+                <div class="col-2">Relation</div>
+                <div class="col-4">{{item.relation}}</div>
+                <div class="col-2">Phone No</div>
+                <div class="col-4">{{item.number}}</div>
+            </ng-container>
+        </div>
+    </div>
+</ng-container>
+<ng-template #elseBlk>
+    <p class="display-1">
+        Student Doesn't Exist.
+    </p>
+</ng-template>
+<p></p>

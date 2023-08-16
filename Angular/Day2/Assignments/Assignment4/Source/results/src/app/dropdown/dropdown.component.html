@@ -1,0 +1,9 @@
+<div class="mb-3 container">
+    <label for="selectStudents" class="form-label">Student</label>
+    <select class="form-select form-select-lg" id="selectStudents" [(ngModel)]="current" (change)="onDataChange()">
+        <option selected disabled>Select one</option>
+        <option *ngFor="let item of data"  [ngValue]="item">{{item.Name}}</option>
+    </select>
+</div>
+
+

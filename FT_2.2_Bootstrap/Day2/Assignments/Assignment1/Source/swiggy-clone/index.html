@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/swiggy.svg" />
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.scss">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+  <style>
+    .w-25 {
+      width: 20% !important;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    #scroll-smooth {
+      scroll-behavior: smooth;
+    }
+
+    #next-btn {
+      color: white;
+    }
+
+    #next-btn:hover {
+      color: gray;
+    }
+
+    #NEW {
+      font-size: 11px;
+    }
+
+    #navbarNav2 .navbar-nav .nav-link.active,
+    #navbarNav2 .navbar-nav .show>.nav-link {
+      color: var(--bs-navbar-active-color);
+      text-decoration: underline;
+    }
+
+    #navbarNav2 .navbar-nav .nav-link {
+      font-size: 16px;
+    }
+
+
+    .hello {
+      font-size: 14px;
+    }
+
+    .mylist {
+      list-style: none;
+
+    }
+
+    .mylist li {
+      margin-top: 1rem;
+    }
+
+    #main-item {
+      margin-bottom: 1em;
+      color: rgb(148, 148, 148);
+      text-transform: uppercase;
+    }
+
+    .bi-facebook:hover,
+    .bi-pinterest:hover,
+    .bi-instagram:hover,
+    .bi-twitter:hover {
+      font-size: 2.5em;
+      cursor: pointer;
+      transition-duration: 250ms;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiggy</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top  navbar-light bg-light shadow p-3 mb-2 bg-body rounded"
+    aria-label="top_nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <img src="https://i.ibb.co/KDMZYGy/swiggy-logo.png" alt="Logo">
+        <p class="h6 d-lg-inline">
+          <a href="#sidebar" data-bs-toggle="offcanvas" class="text-decoration-none text-black"> <span
+              class="text-primary fw-bold text-decoration-underline">Thaltej</span> <span class="d-none d-md-inline">
+              Westend park, Thaltej, Ahmedabad </span> <em class="bi bi-chevron-down text-primary"></em></a>
+        </p>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 d-flex justify-content-evenly">
+          <li class="nav-item">
+            <a class="nav-link fw-semibold active" aria-current="page" href="#">
+              <em class="bi bi-search me-2"></em> Search
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#">
+              <svg class="me-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                height="16px" width="16px" version="1.1" id="Capa_1" viewBox="0 0 195.803 195.803" xml:space="preserve">
+                <g>
+                  <g>
+                    <g>
+                      <path style="fill:#010002;"
+                        d="M195.803,104.175l-15.958-18.141l9.688-19.612l-19.494-9.616l1.525-23.685l-24.182-1.557     l-7.315-21.616l-20.915,7.086L104.173,0.002L86.504,15.541L65.146,4.991L54.939,25.648l-21.82-1.396L31.68,46.67L8.668,54.461     l7.716,22.769L0,91.628l14.315,16.277l-10.604,21.48l21.978,10.851l-1.442,22.457l21.552,1.385l7.383,21.777l22.887-7.748     l15.561,17.694l16.745-14.731l19.727,9.742l10.275-20.815l24.322,1.568l1.492-23.313l20.389-6.907l-7.125-21.033L195.803,104.175     z M158.303,143.743l-1.364,21.273l-22.268-1.424l-9.369,18.975l-17.898-8.84l-15.21,13.378l-14.208-16.162l-20.947,7.097     l-6.735-19.852l-19.512-1.249l1.306-20.414l-20.135-9.942l9.706-19.644L8.7,92.197l14.838-13.048l-7.054-20.829l21.083-7.143     l1.303-20.392l19.784,1.267l9.284-18.814l19.541,9.656l16.141-14.197l13.618,15.489l18.975-6.428l6.671,19.687l22.139,1.417     l-1.385,21.638l17.654,8.722L172.504,87l14.609,16.617L170.3,118.401l6.471,19.082L158.303,143.743z" />
+                    </g>
+                    <g>
+                      <path style="fill:#010002;"
+                        d="M120.707,90.797c-9.18,0-16.763,7.791-16.763,21.784c0.1,13.879,7.58,20.818,16.23,20.818     c8.868,0,16.552-7.258,16.552-21.895C136.73,98.27,130.431,90.797,120.707,90.797z M120.389,127.742     c-5.766,0-9.183-6.725-9.076-15.582c0-8.761,3.203-15.7,9.076-15.7c6.51,0,8.965,7.047,8.965,15.489     C129.354,121.121,126.584,127.742,120.389,127.742z" />
+                    </g>
+                    <g>
+                      <path style="fill:#010002;"
+                        d="M91.558,82.791c0-13.238-6.406-20.722-16.123-20.722c-9.183,0-16.763,7.802-16.763,21.681     c0.107,13.983,7.58,20.922,16.23,20.922C83.87,104.676,91.558,97.415,91.558,82.791z M66.144,83.432     c0-8.761,3.103-15.7,8.969-15.7c6.514,0,8.969,7.047,8.969,15.489c0,9.176-2.777,15.797-8.969,15.797     C69.247,99.014,65.93,92.29,66.144,83.432z" />
+                    </g>
+                    <g>
+                      <polygon style="fill:#010002;"
+                        points="115.049,62.07 74.258,133.829 80.234,133.829 121.03,62.07    " />
+                    </g>
+                  </g>
+                </g>
+              </svg> Offers <span id="NEW" class=" text-primary align-top fw-bolder">NEW</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#">
+              <em class="bi bi-info-circle me-2"></em> Help
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#">
+              <em class="bi bi-person me-2"></em> Account
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#">
+              <em class="bi bi-handbag me-2"></em> Cart
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid bg-dark text-white p-lg-5 p-1 d-flex overflow-scroll">
+
+    <a id="next-btn" href="#img2" class="h-25 align-self-center p-0 rounded-circle"> <span
+        class="bi bi-arrow-left-circle-fill h1"></span></a>
+
+    <div id="scroll-smooth" class="container-fluid d-flex overflow-scroll" data-bs-target="#next-btn">
+
+
+      <img id="img2" class="h-75 img-fluid mx-1 mx-lg-2 align-self-center"
+        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/pneknawbadtvceqzwiep"
+        alt="Swiggy Offers">
+      <img class="h-75 img-fluid mx-1 mx-lg-2 align-self-center"
+        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/qsgjyrelvjr3atzl0ypm"
+        alt="Swiggy Offers">
+      <img class="h-75 img-fluid mx-1 mx-lg-2 align-self-center d-none d-lg-inline"
+        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/s5ug2key6e2sptaxku5v"
+        alt="Swiggy Offers">
+      <img class="h-75 img-fluid mx-1 mx-lg-2 align-self-center d-none d-lg-inline"
+        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/ifi2lbzxeu1hvsqrsip3"
+        alt="Swiggy Offers">
+
+      <img class="h-75 img-fluid mx-1 mx-lg-2 align-self-center d-none d-lg-inline"
+        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/s5ug2key6e2sptaxku5v"
+        alt="Swiggy Offers">
+      <img id="img7" class="h-75 img-fluid mx-1 mx-lg-2 align-self-center"
+        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/ifi2lbzxeu1hvsqrsip3"
+        alt="Swiggy Offers">
+
+    </div>
+    <a id="next-btn" href="#img7" class="h-25 align-self-center p-0 rounded-circle"> <span
+        class="bi bi-arrow-right-circle-fill h1"></span></a>
+
+  </div>
+
+
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light shadow p-3 my-5 bg-body rounded"
+    aria-label="mid_nav">
+    <div class="container-fluid row">
+      <a class="navbar-brand me-5 col-4" href="./index.html">
+        <p class="display-6 fw-bold ">
+          509 Restaurants
+        </p>
+      </a>
+      <a class="nav-link fw-semibold active col-1" aria-current="page" href="#">
+        <em class="bi bi-search me-2"></em> Search
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse col-7" id="navbarNav2">
+        <ul class="navbar-nav w-100 d-flex justify-content-evenly">
+          <li class="nav-item">
+            <a class="nav-link hello fw-semibold active" aria-current="page" href="#">
+              Relevance
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hello fw-semibold" href="#">
+              Delivery Time
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hello fw-semibold" href="#">
+              Rating
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hello fw-semibold" href="#">
+              Cost : Low to High
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hello fw-semibold" href="#">
+              Cost : High to Low
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hello fw-semibold" href="#">
+              Filters <em class="bi bi-sliders h6 border border-2 border-primary rounded-circle p-1 text-primary"></em>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid bg-light p-4 row d-flex justify-content-around">
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start shadow">
+        <span
+          class="position-absolute top-0 ms-4 translate-middle badge bg-dark text-white text-uppercase">Promoted</span>
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/l7z6xuzelu9zotumvpk5"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rprjqll7yxg6txyhjrqz"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Bansi Kathiawadi</h4>
+          <p class="text-muted small">Punjabi & Chinese</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.1</p>
+            <p class="">.</p>
+            <p class="hello">11 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 100 FOR ONE</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 10% off | use GET10
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <span
+          class="position-absolute top-0 ms-4 translate-middle badge bg-dark text-white text-uppercase">Promoted</span>
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wivd5l2pzs68tbxyrkqf"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Sudama Restaurant</h4>
+          <p class="text-muted small">Punjabi & Kathiawadi</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">41 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 200 FOR ONE</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <span
+          class="position-absolute top-0 ms-4 translate-middle badge bg-dark text-white text-uppercase">Promoted</span>
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/dgk4obiml7wgzzlx0twg"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Gujju Food Corner</h4>
+          <p class="text-muted small">Snacks and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">51 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 80 FOR ONE</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <span
+          class="position-absolute top-0 ms-4 translate-middle badge bg-dark text-white text-uppercase">Promoted</span>
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pf9w6vasafjh74crtjmz"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/sep5bxufb70zcdqhud9y"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Sudama Restaurant</h4>
+          <p class="text-muted small">Punjabi & Kathiawadi</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">41 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 200 FOR ONE</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rvbjlhqi8ckzpd7oppml"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Bansi Kathiawadi</h4>
+          <p class="text-muted small">Punjabi & Chinese</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.1</p>
+            <p class="">.</p>
+            <p class="hello">11 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 100 FOR ONE</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 10% off | use GET10
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <span
+          class="position-absolute top-0 ms-4 translate-middle badge bg-dark text-white text-uppercase">Promoted</span>
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/txsnaneuu5ovjsrojzei"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/muidb9j2313oxodrwsul"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <span
+          class="position-absolute top-0 ms-4 translate-middle badge bg-dark text-white text-uppercase">Promoted</span>
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ftxqmcbcjqkdfhw1tyhe"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rvbjlhqi8ckzpd7oppml"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/l7z6xuzelu9zotumvpk5"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rprjqll7yxg6txyhjrqz"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Bansi Kathiawadi</h4>
+          <p class="text-muted small">Punjabi & Chinese</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.1</p>
+            <p class="">.</p>
+            <p class="hello">11 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 100 FOR ONE</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 10% off | use GET10
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wivd5l2pzs68tbxyrkqf"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Sudama Restaurant</h4>
+          <p class="text-muted small">Punjabi & Kathiawadi</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">41 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 200 FOR ONE</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <span
+          class="position-absolute top-0 ms-4 translate-middle badge bg-dark text-white text-uppercase">Promoted</span>
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/dgk4obiml7wgzzlx0twg"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Gujju Food Corner</h4>
+          <p class="text-muted small">Snacks and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">51 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 80 FOR ONE</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pf9w6vasafjh74crtjmz"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <span
+          class="position-absolute top-0 ms-4 translate-middle badge bg-dark text-white text-uppercase">Promoted</span>
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/sep5bxufb70zcdqhud9y"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Sudama Restaurant</h4>
+          <p class="text-muted small">Punjabi & Kathiawadi</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">41 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 200 FOR ONE</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rvbjlhqi8ckzpd7oppml"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Bansi Kathiawadi</h4>
+          <p class="text-muted small">Punjabi & Chinese</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.1</p>
+            <p class="">.</p>
+            <p class="hello">11 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 100 FOR ONE</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 10% off | use GET10
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/txsnaneuu5ovjsrojzei"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/muidb9j2313oxodrwsul"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <span
+          class="position-absolute top-0 ms-4 translate-middle badge bg-dark text-white text-uppercase">Promoted</span>
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ftxqmcbcjqkdfhw1tyhe"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-lg-3 col-md-5 p-0 p-lg-2 px-lg-3 m-3">
+      <div class="card text-start border-0 shadow">
+        <span
+          class="position-absolute top-0 ms-4 translate-middle badge bg-dark text-white text-uppercase">Promoted</span>
+        <img class="card-img-top"
+          src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rvbjlhqi8ckzpd7oppml"
+          alt="Title">
+        <div class="card-body p-0 m-2">
+          <h4 class="card-title h5 m-0">Cake World</h4>
+          <p class="text-muted small">Desserts and Beverages</p>
+          <div class="container-fluid d-flex justify-content-around p-0 border-bottom border-2">
+            <p class="text-white bg-success px-2 hello"><em class="bi bi-star-fill me-1"></em>4.6</p>
+            <p class="">.</p>
+            <p class="hello">16 MINS</p>
+            <p class="">.</p>
+            <p class="hello">₹ 400 FOR TWO</p>
+
+          </div>
+          <p class="text-uppercase p-2 text-info fw-semibold"> <em class="bi bi-tag-fill"></em> flat 100 off | use
+            FLATDEAL</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg-dark text-white p-5">
+    <div class="row my-2">
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <ul class="mylist">
+          <li id="main-item">Company</li>
+          <li>About us</li>
+          <li>Team</li>
+          <li>Careers</li>
+          <li>Swiggy Blog</li>
+          <li>Ejmijtu</li>
+          <li>Namibia</li>
+          <li>Cynthia</li>
+          <li>Parsons</li>
+          <li>Hinatef</li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <ul class="mylist">
+          <li id="main-item">Contact</li>
+          <li>Help & Support</li>
+          <li>Partnet with us</li>
+          <li>Ride with us</li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <ul class="mylist">
+          <li id="main-item">Legal</li>
+          <li>Terms & Conditions</li>
+          <li>Refund & Cancellation</li>
+          <li>Privacy Policy</li>
+          <li>Cookie Policy</li>
+          <li>Offer terms</li>
+          <li>Philishing fraud</li>
+          <li>Corporate - Swiggy Money Codes Terms and Conditions</li>
+          <li>Corporate - Swiggy Discount Voucher Terms and Conditions</li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 p-5">
+        <img class="w-75 img-fluid"
+          src="https://freepngimg.com/download/android/58438-play-app-android-now-button-store.png" alt="downloag">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container-fluid bg-dark text-white p-5">
+    <p class="text-uppercase text-muted fw-semibold">we deliver to</p>
+    <div class="row my-2 border-bottom border-1 border-light">
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <ul class="mylist">
+          <li>Zeurena</li>
+          <li>Latbozja </li>
+          <li>Poluvas</li>
+          <li>Wiuwpe</li>
+          <li>Cupnaez </li>
+          <li>Emricga</li>
+          <li>Izikueni</li>
+          <li>Feggehhi</li>
+          <li>Vinave</li>
+          <li>Zocozvun</li>
+          <li>Epubibmog</li>
+          <li>Pigebvo</li>
+          <li>Pajravka</li>
+          <li>Jejturmi</li>
+          <li>Diapbu</li>
+          <li>Tacahir</li>
+          <li>Cuccakig</li>
+          <li>Ariunegi</li>
+          <li>Veposig</li>
+          <li>Samizuter</li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <ul class="mylist">
+          <li>Waznogub</li>
+          <li>Wamasco</li>
+          <li>Dasoude</li>
+          <li>Monrumej</li>
+          <li>Dugeveg</li>
+          <li>Dalpatza</li>
+          <li>Lojunpah</li>
+          <li>Alevku</li>
+          <li>Akapajtuv</li>
+          <li>Faacpa</li>
+          <li>Odevipot</li>
+          <li>Birleso</li>
+          <li>Befobjoz</li>
+          <li>Famsohen</li>
+          <li>Uhmodo</li>
+          <li>Tuzazev</li>
+          <li>Townibzid</li>
+          <li>Futvojwak</li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <ul class="mylist">
+          <li>Ovahipab</li>
+          <li>Runtiwki</li>
+          <li>Hagekef</li>
+          <li>Bubenbo</li>
+          <li>Avopsoj</li>
+          <li>Vizligan</li>
+          <li>Jowmanos</li>
+          <li>Rutmearo</li>
+          <li>Ecbefu</li>
+          <li>Fuecero</li>
+          <li>Tetebu</li>
+          <li>Pacpukez</li>
+          <li>Aruhijah</li>
+          <li>Rilzotu</li>
+          <li>Robpubgel</li>
+          <li>Fugeruv</li>
+          <li>Nicnucip</li>
+          <li>Cihapale</li>
+          <li>Bukdujje</li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <ul class="mylist">
+          <li>Umogumaf</li>
+          <li>Ujivude</li>
+          <li>Sihuem</li>
+          <li>Iluceebe</li>
+          <li>Zitidi</li>
+          <li>Rawiled</li>
+          <li>Kotwumez</li>
+          <li>Ringiuwa</li>
+          <li>Kesibca</li>
+          <li>Puokifom</li>
+          <li>Tipatzir</li>
+          <li>Atunher</li>
+          <li>Kemmiwbul</li>
+          <li>Arizibva</li>
+          <li>Bufwutop</li>
+          <li>Kictuto</li>
+          <li>Jogcofeno</li>
+          <li>Hiptikpev</li>
+          <li>Vobwavpek</li>
+          <li>Ziwriwo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-12 col-sm-12 order-sm-0 order-lg-0 d-flex justify-content-center"><img
+          src="https://i.ibb.co/mD78gGv/swiggy-whitelogo.png" alt="swiggy-whitelogo" border="0"></div>
+      <div class="col-lg-4 col-md-12 col-sm-12 order-sm-2 order-lg-1 d-flex align-items-center justify-content-center">©
+        2023 Swiggy (Clone by - Nirmal Shah)</div>
+      <div
+        class="col-lg-4 col-md-12 col-sm-12 order-sm-1 order-lg-2 my-sm-5 d-flex justify-content-center align-items-center">
+        <div class="d-flex justify-content-center">
+          <em class="bi bi-facebook h2 me-3"></em>
+          <em class="bi bi-pinterest h2 me-3"></em>
+          <em class="bi bi-instagram h2 me-3"></em>
+          <em class="bi bi-twitter h2 me-3"></em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  </div>
+
+  <!-- OFF CANVAS  -->
+  <div class="offcanvas offcanvas-start w-25" tabindex="-1" id="sidebar" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <input type="text" class="form-control" placeholder="Search for area, street name..">
+      </div>
+      <ul class="list-group mt-5">
+        <li class="list-group-item">
+          <div class="container-fluid row">
+            <div class="col-2">
+              <em class=" bi bi-geo-alt"></em>
+            </div>
+            <div class="col-10">
+              <p class="h5">Get current location</p>
+              <p class="small">using GPS</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- OFF CANVAS  -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<div class="container p-2">
+    <table class="table table-striped" *ngIf="AttendanceData.length!==0 else noData">
+        <caption></caption>
+        <thead>
+            <tr>
+                <th>Lecture</th>
+                <th>Attendannce</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let data of AttendanceData">
+            <tr>
+                <td>
+                    Lecture on <span class="text-primary fw-semibold"> {{data.Topic}} </span>
+                    on <span class="text-primary fw-semibold"> {{data.Schedule|date:"mediumDate"}} </span>
+                    at <span class="text-primary fw-semibold"> {{data.Schedule|date:"shortTime"}} </span>
+                </td>
+                <td>
+                    <span *ngIf="getAttByID(data, CurrentUser.ID)===null" class="text-warning">Not Updated</span>
+                    <span *ngIf="getAttByID(data, CurrentUser.ID)===false" class="text-danger">Absent</span>
+                    <span *ngIf="getAttByID(data, CurrentUser.ID)===true" class="text-success">Present</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #noData>
+        <p class="display-3">
+            No Data Found
+        </p>
+    </ng-template>
+</div>
+

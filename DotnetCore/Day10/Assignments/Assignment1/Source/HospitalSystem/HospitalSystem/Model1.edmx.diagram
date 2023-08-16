@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ebe57a995c8d48aab060acf13dc6f33a" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="HospitalSystemModel.ATTENDEE" Width="1.5" PointX="3.375" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalSystemModel.DEPARTMENT" Width="1.5" PointX="0.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalSystemModel.Drug" Width="1.5" PointX="1.875" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalSystemModel.HospitalEmployee" Width="1.5" PointX="0.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalSystemModel.Patient" Width="1.5" PointX="5.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalSystemModel.Prescription" Width="1.5" PointX="4.625" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalSystemModel.Attending" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="HospitalSystemModel.FK__Attending__Atten__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalSystemModel.FK__HospitalE__EmpTy__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalSystemModel.FK__HospitalE__DeptI__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalSystemModel.FK__Patient__DeptID__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalSystemModel.FK__Prescript__DrugI__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalSystemModel.FK__Prescript__PresB__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalSystemModel.FK__Attending__Patie__37A5467C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TS Assignment 5</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header>
+      <!-- place navbar here -->
+    </header>
+    <main>
+      <div class="container py-5">
+        <p class="display-6">Employee Data</p>
+        <form action="" id="searchForm">
+        <div class="mb-3 input-group">
+          <input type="number" id="searchTxt" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="button" id="searchBtn" class="btn btn-primary" value="Search">
+        </div>
+      </form>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-primary mb-3" id="viewAll">View All Employees</button>
+        </div>
+        <div class="table-responsive" id="empData">
+          
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-primary mb-3" id="viewAllAfter2020">View All Employees who joined after 2020</button>
+        </div>
+        <div class="table-responsive" id="empDataquery1">
+          
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-primary mb-3" id="viewAllAfter2020andCityMumbai">View All Employees who joined after 2020 and city is Mumbai</button>
+        </div>
+        <div class="table-responsive" id="empDataquery2">
+          
+        </div>
+      </div>
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

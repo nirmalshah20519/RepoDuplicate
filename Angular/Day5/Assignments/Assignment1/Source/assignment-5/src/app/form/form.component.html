@@ -1,0 +1,343 @@
+<p></p>
+<p>
+  {{form|json}}
+</p>
+<div class="mb-3">
+    <form class="border border-2 rounded rounded-5 border-primary overflow-hidden pb-4" [formGroup]="form">
+        <p class="bg-primary text-white p-2 h3">Student Details</p>
+        <div class="p-4">
+        <ng-container formGroupName="Name">
+            <div class="d-flex justify-content-between mb-3">
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">First Name</label>
+                    <input type="text"
+                      class="form-control" formControlName="fname" placeholder="First Name">
+                      <div *ngIf="fc['Name'].get('fname')?.invalid && (fc['Name'].get('fname')?.dirty || fc['Name'].get('fname')?.touched)">
+                        <p *ngIf="fc['Name'].get('fname')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['Name'].get('fname')?.errors?.['whiteSpaceValidator']" class="text-danger">*White Space not allowed in name</p>
+                      </div>
+                </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Middle Name</label>
+                    <input type="text"
+                      class="form-control" formControlName="mname" placeholder="Middle Name">
+                      <div *ngIf="fc['Name'].get('mname')?.invalid && (fc['Name'].get('mname')?.dirty || fc['Name'].get('mname')?.touched)">
+                        <p *ngIf="fc['Name'].get('mname')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['Name'].get('mname')?.errors?.['whiteSpaceValidator']" class="text-danger">*White Space not allowed in name</p>
+                      </div>
+                </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Last Name</label>
+                    <input type="text"
+                      class="form-control" formControlName="lname" placeholder="Last Name">
+                      <div *ngIf="fc['Name'].get('lname')?.invalid && (fc['Name'].get('lname')?.dirty || fc['Name'].get('lname')?.touched)">
+                        <p *ngIf="fc['Name'].get('lname')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['Name'].get('lname')?.errors?.['whiteSpaceValidator']" class="text-danger">*White Space not allowed in name</p>
+                      </div>
+                </div>
+            </div>                
+            </ng-container>
+
+            <div class="d-flex justify-content-between mb-3">
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Date of Birth</label>
+                    <input type="date"
+                      class="form-control" formControlName="DOB">
+                      <div *ngIf="fc['DOB'].invalid && (fc['DOB'].dirty || fc['DOB'].touched)">
+                        <p *ngIf="fc['DOB'].errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['DOB'].errors?.['dobValidator']" class="text-danger">*Age of student should be minimum 5 years</p>
+                      </div>
+                </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Place of Birth</label>
+                    <input type="text"
+                      class="form-control" formControlName="PlaceOfBirth" placeholder="Place of Birth">
+                      <div *ngIf="fc['PlaceOfBirth'].invalid && (fc['PlaceOfBirth'].dirty || fc['PlaceOfBirth'].touched)">
+                        <p *ngIf="fc['DOB'].errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['DOB'].errors?.['dobValidator']" class="text-danger">*Age of student should be minimum 5 years</p>
+                      </div>
+                </div>
+
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">First Language</label>
+                    <input type="text"
+                      class="form-control" formControlName="FirstLanguage" placeholder="First Language">
+                </div>
+            </div>
+
+            <ng-container formGroupName="Address">
+                <div class="d-flex justify-content-between mb-3">
+                    <div class="me-3 flex-grow-1">
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control" formControlName="City" placeholder="City">
+                        <div *ngIf="fc['Address'].get('City')?.invalid && (fc['Address'].get('City')?.dirty || fc['Address'].get('City')?.touched)">
+                          <p *ngIf="fc['Address'].get('City')?.errors?.['required']" class="text-danger">*Required</p>
+                          <p *ngIf="fc['Address'].get('City')?.errors?.['pattern']" class="text-danger">*City name doesn't contain number, character or whitespace</p>
+                        </div>
+                    </div>
+            
+                    <div class="me-3 flex-grow-1">
+                        <label class="form-label">State</label>
+                        <input type="text"
+                          class="form-control" formControlName="State" placeholder="State">
+                          <div *ngIf="fc['Address'].get('State')?.invalid && (fc['Address'].get('State')?.dirty || fc['Address'].get('State')?.touched)">
+                            <p *ngIf="fc['Address'].get('State')?.errors?.['required']" class="text-danger">*Required</p>
+                            <p *ngIf="fc['Address'].get('State')?.errors?.['pattern']" class="text-danger">*State name doesn't contain number, character or whitespace</p>
+                          </div>
+                    </div>
+
+                    <div class="me-3 flex-grow-1">
+                        <label class="form-label"> Country </label>
+                        <input type="text"
+                          class="form-control" formControlName="Country" placeholder="Country">
+                          <div *ngIf="fc['Address'].get('Country')?.invalid && (fc['Address'].get('Country')?.dirty || fc['Address'].get('Country')?.touched)">
+                            <p *ngIf="fc['Address'].get('Country')?.errors?.['required']" class="text-danger">*Required</p>
+                            <p *ngIf="fc['Address'].get('Country')?.errors?.['pattern']" class="text-danger">*Country name doesn't contain number, character or whitespace</p>
+                          </div>
+                    </div>
+
+                    <div class="me-3 flex-grow-1">
+                        <label class="form-label"> Pincode </label>
+                        <input type="text"
+                          class="form-control" formControlName="Pincode" placeholder="Pincode">
+                          <div *ngIf="fc['Address'].get('Pincode')?.invalid && (fc['Address'].get('Pincode')?.dirty || fc['Address'].get('Pincode')?.touched)">
+                            <p *ngIf="fc['Address'].get('Pincode')?.errors?.['required']" class="text-danger">*Required</p>
+                            <p *ngIf="fc['Address'].get('Pincode')?.errors?.['pattern']" class="text-danger">*Pincode doesn't contain letters</p>
+                            <p *ngIf="fc['Address'].get('Pincode')?.errors?.['maxlength'] || fc['Address'].get('Pincode')?.errors?.['minlength']" class="text-danger">*Pincode has 6 digits</p>                            
+                          </div>
+                    </div>
+                </div>
+            </ng-container>
+
+            </div>
+
+
+        <p class="bg-primary text-white p-2 h3 my-4">Father's Details</p>
+        <div class="p-4">
+        <ng-container formGroupName="FatherDetails">
+            <ng-container formGroupName="Name">
+            <div class="d-flex justify-content-between mb-3">
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">First Name</label>
+                    <input type="text"
+                      class="form-control" formControlName="fname" placeholder="First Name">
+                      <div *ngIf="fc['FatherDetails'].get('Name')?.get('fname')?.invalid && (fc['FatherDetails'].get('Name')?.get('fname')?.dirty || fc['FatherDetails'].get('Name')?.get('fname')?.touched)">
+                        <p *ngIf="fc['FatherDetails'].get('Name')?.get('fname')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['FatherDetails'].get('Name')?.get('fname')?.errors?.['whiteSpaceValidator']" class="text-danger">*White Space not allowed in name</p>
+                      </div>
+                </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Middle Name</label>
+                    <input type="text"
+                      class="form-control" formControlName="mname" placeholder="Middle Name">
+                      <div *ngIf="fc['FatherDetails'].get('Name')?.get('mname')?.invalid && (fc['FatherDetails'].get('Name')?.get('mname')?.dirty || fc['FatherDetails'].get('Name')?.get('mname')?.touched)">
+                        <p *ngIf="fc['FatherDetails'].get('Name')?.get('mname')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['FatherDetails'].get('Name')?.get('mname')?.errors?.['whiteSpaceValidator']" class="text-danger">*White Space not allowed in name</p>
+                      </div>
+                </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Last Name</label>
+                    <input type="text"
+                      class="form-control" formControlName="lname" placeholder="Last Name">
+                      <div *ngIf="fc['FatherDetails'].get('Name')?.get('lname')?.invalid && (fc['FatherDetails'].get('Name')?.get('lname')?.dirty || fc['FatherDetails'].get('Name')?.get('lname')?.touched)">
+                        <p *ngIf="fc['FatherDetails'].get('Name')?.get('lname')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['FatherDetails'].get('Name')?.get('lname')?.errors?.['whiteSpaceValidator']" class="text-danger">*White Space not allowed in name</p>
+                      </div>
+                      
+                </div>
+            </div>                
+        </ng-container>
+
+            <div class="d-flex justify-content-between mb-3">
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Email</label>
+                    <input type="text"
+                      class="form-control" formControlName="email" placeholder="Email">
+                      <div *ngIf="fc['FatherDetails'].get('email')?.invalid && (fc['FatherDetails'].get('email')?.dirty || fc['FatherDetails'].get('email')?.touched)">
+                        <p *ngIf="fc['FatherDetails'].get('email')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['FatherDetails'].get('email')?.errors?.['email']" class="text-danger">*Invalid email</p>
+                      </div>
+                </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Education</label>
+                    <input type="text"
+                      class="form-control" formControlName="education" placeholder="Education">
+                      <div *ngIf="fc['FatherDetails'].get('education')?.invalid && (fc['FatherDetails'].get('education')?.dirty || fc['FatherDetails'].get('education')?.touched)">
+                        <p *ngIf="fc['FatherDetails'].get('education')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['FatherDetails'].get('education')?.errors?.['pattern']" class="text-danger">*Education doesn't contain number , character or whitespace</p>
+                      </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mb-3">
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Designation</label>
+                    <input type="text"
+                      class="form-control" formControlName="designation" placeholder="Designation">
+                      <div *ngIf="fc['FatherDetails'].get('designation')?.invalid && (fc['FatherDetails'].get('designation')?.dirty || fc['FatherDetails'].get('designation')?.touched)">
+                        <p *ngIf="fc['FatherDetails'].get('designation')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['FatherDetails'].get('designation')?.errors?.['pattern']" class="text-danger">*Designation doesn't contain number , character or whitespace</p>
+                      </div>
+                </div>
+
+                <div class="me-3 flex-grow-1">
+                  <label class="form-label">Profession</label>
+                  <input type="text"
+                    class="form-control" formControlName="profession" placeholder="Profession">
+                    <div *ngIf="fc['FatherDetails'].get('profession')?.invalid && (fc['FatherDetails'].get('profession')?.dirty || fc['FatherDetails'].get('profession')?.touched)">
+                      <p *ngIf="fc['FatherDetails'].get('profession')?.errors?.['required']" class="text-danger">*Required</p>
+                      <p *ngIf="fc['FatherDetails'].get('profession')?.errors?.['pattern']" class="text-danger">*Profession doesn't contain number , character or whitespace</p>
+                    </div>
+              </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Phone</label>
+                    <input type="text"
+                      class="form-control" formControlName="phone" placeholder="Phone">
+                      <div *ngIf="fc['FatherDetails'].get('phone')?.invalid && (fc['FatherDetails'].get('phone')?.dirty || fc['FatherDetails'].get('phone')?.touched)">
+                        <p *ngIf="fc['FatherDetails'].get('phone')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['FatherDetails'].get('phone')?.errors?.['pattern']" class="text-danger">*Phone No doesn't contain letters</p>
+                        <p *ngIf="fc['FatherDetails'].get('phone')?.errors?.['minlength'] || fc['FatherDetails'].get('phone')?.errors?.['minlength']" class="text-danger">*Enter Valid Phone No</p>
+                      </div>
+                </div>
+            </div>
+        </ng-container>
+        </div>
+
+        <p class="bg-primary text-white p-2 h3 my-4">Mother's Details</p>
+        <div class="p-4">
+        <ng-container formGroupName="MotherDetails">
+            <ng-container formGroupName="Name">
+            <div class="d-flex justify-content-between mb-3">
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">First Name</label>
+                    <input type="text"
+                      class="form-control" formControlName="fname" placeholder="First Name">
+                      <div *ngIf="fc['MotherDetails'].get('Name')?.get('fname')?.invalid && (fc['MotherDetails'].get('Name')?.get('fname')?.dirty || fc['MotherDetails'].get('Name')?.get('fname')?.touched)">
+                        <p *ngIf="fc['MotherDetails'].get('Name')?.get('fname')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['MotherDetails'].get('Name')?.get('fname')?.errors?.['whiteSpaceValidator']" class="text-danger">*White Space not allowed in name</p>
+                      </div>
+                </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Middle Name</label>
+                    <input type="text"
+                      class="form-control" formControlName="mname" placeholder="Middle Name">
+                      <div *ngIf="fc['MotherDetails'].get('Name')?.get('mname')?.invalid && (fc['MotherDetails'].get('Name')?.get('mname')?.dirty || fc['MotherDetails'].get('Name')?.get('mname')?.touched)">
+                        <p *ngIf="fc['MotherDetails'].get('Name')?.get('mname')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['MotherDetails'].get('Name')?.get('mname')?.errors?.['whiteSpaceValidator']" class="text-danger">*White Space not allowed in name</p>
+                      </div>
+                </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Last Name</label>
+                    <input type="text"
+                      class="form-control" formControlName="lname" placeholder="Last Name">
+                      <div *ngIf="fc['MotherDetails'].get('Name')?.get('lname')?.invalid && (fc['MotherDetails'].get('Name')?.get('lname')?.dirty || fc['MotherDetails'].get('Name')?.get('lname')?.touched)">
+                        <p *ngIf="fc['MotherDetails'].get('Name')?.get('lname')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['MotherDetails'].get('Name')?.get('lname')?.errors?.['whiteSpaceValidator']" class="text-danger">*White Space not allowed in name</p>
+                      </div>
+                </div>
+            </div>                
+        </ng-container>
+
+            <div class="d-flex justify-content-between mb-3">
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Email</label>
+                    <input type="text"
+                      class="form-control" formControlName="email" placeholder="Email">
+                      <div *ngIf="fc['MotherDetails'].get('email')?.invalid && (fc['MotherDetails'].get('email')?.dirty || fc['MotherDetails'].get('email')?.touched)">
+                        <p *ngIf="fc['MotherDetails'].get('email')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['MotherDetails'].get('email')?.errors?.['email']" class="text-danger">*Invalid email</p>
+                      </div>
+                </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Education</label>
+                    <input type="text"
+                      class="form-control" formControlName="education" placeholder="Education">
+                      <div *ngIf="fc['MotherDetails'].get('education')?.invalid && (fc['MotherDetails'].get('education')?.dirty || fc['MotherDetails'].get('education')?.touched)">
+                        <p *ngIf="fc['MotherDetails'].get('education')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['MotherDetails'].get('education')?.errors?.['pattern']" class="text-danger">*Education doesn't contain number , character or whitespace</p>
+                      </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mb-3">
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Designation</label>
+                    <input type="text"
+                      class="form-control" formControlName="designation" placeholder="Designation">
+                      <div *ngIf="fc['MotherDetails'].get('designation')?.invalid && (fc['MotherDetails'].get('designation')?.dirty || fc['MotherDetails'].get('designation')?.touched)">
+                        <p *ngIf="fc['MotherDetails'].get('designation')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['MotherDetails'].get('designation')?.errors?.['pattern']" class="text-danger">*Designation doesn't contain number , character or whitespace</p>
+                      </div>
+                </div>
+
+                <div class="me-3 flex-grow-1">
+                  <label class="form-label">Profession</label>
+                  <input type="text"
+                    class="form-control" formControlName="profession" placeholder="Profession">
+                    <div *ngIf="fc['MotherDetails'].get('profession')?.invalid && (fc['MotherDetails'].get('designation')?.dirty || fc['MotherDetails'].get('profession')?.touched)">
+                      <p *ngIf="fc['MotherDetails'].get('profession')?.errors?.['required']" class="text-danger">*Required</p>
+                      <p *ngIf="fc['MotherDetails'].get('profession')?.errors?.['pattern']" class="text-danger">*Profession doesn't contain number , character or whitespace</p>
+                    </div>
+              </div>
+        
+                <div class="me-3 flex-grow-1">
+                    <label class="form-label">Phone</label>
+                    <input type="text"
+                      class="form-control" formControlName="phone" placeholder="Phone">
+                      <div *ngIf="fc['MotherDetails'].get('phone')?.invalid && (fc['MotherDetails'].get('phone')?.dirty || fc['MotherDetails'].get('phone')?.touched)">
+                        <p *ngIf="fc['MotherDetails'].get('phone')?.errors?.['required']" class="text-danger">*Required</p>
+                        <p *ngIf="fc['MotherDetails'].get('phone')?.errors?.['pattern']" class="text-danger">*Phone No doesn't contain letters</p>
+                        <p *ngIf="fc['MotherDetails'].get('phone')?.errors?.['minlength'] || fc['FatherDetails'].get('phone')?.errors?.['minlength']" class="text-danger">*Enter Valid Phone No</p>
+                      </div>
+                </div>
+            </div>
+        </ng-container>        
+    </div>
+    <p class="bg-primary text-white p-2 h3 my-4">Emergency Contact</p>
+        <ng-container formArrayName="EmergencyContact"  *ngFor="let item of Emergency.controls; let i=index">
+            <ng-container formGroupName="{{i}}">
+                <div class="d-flex justify-content-between mb-3 px-4">
+                    <div class="me-3 flex-grow-1">
+                        <label class="form-label">Relation</label>
+                        <input type="text"
+                          class="form-control" formControlName="relation" placeholder="Relation">
+                          <div *ngIf="item.get('relation')?.invalid && (item.get('relation')?.dirty || item.get('relation')?.touched)">
+                            <p *ngIf="item.get('relation')?.errors?.['required']" class="text-danger">*Required</p>
+                            <p *ngIf="item.get('relation')?.errors?.['pattern']" class="text-danger">*Designation doesn't contain number , character or whitespace</p>
+                          </div>
+                    </div>
+            
+                    <div class="me-3 flex-grow-1">
+                        <label class="form-label">Phone</label>
+                        <input type="text"
+                          class="form-control" formControlName="number" placeholder="Phone">
+                          <div *ngIf="item.get('number')?.invalid && (item.get('number')?.dirty || item.get('number')?.touched)">
+                            <p *ngIf="item.get('number')?.errors?.['required']" class="text-danger">*Required</p>
+                            <p *ngIf="item.get('number')?.errors?.['pattern']" class="text-danger">*Phone No doesn't contain letters, whitespace or characters</p>
+                            <p *ngIf="item.get('number')?.errors?.['minlength'] || item.get('number')?.errors?.['maxlength']" class="text-danger">*Enter Valid Phone No</p>
+                          </div>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+        <div class="px-4">
+          <input type="button" value="Add Emergency Contact" class="btn btn-primary" (click)="Add()">
+        </div>
+        <div *ngIf="form.valid" class="bg-primary p-4 mt-5 d-flex justify-content-end">
+          <button class="btn btn-success btn-lg opacity-100" (click)="submit()" role="button"> Submit </button>
+        </div>
+    </form>
+    
+</div>
+
+

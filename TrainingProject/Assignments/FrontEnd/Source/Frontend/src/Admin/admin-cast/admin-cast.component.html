@@ -1,0 +1,114 @@
+<div class=" flex flex-col md:flex-row justify-center md:justify-around ">
+  <div class=" p-4">
+    <p class="text-2xl text-center mt-2 bg-purple-400 p-2">
+      Add Cast Detail
+    </p>
+    <p *ngIf="green" class=" bg-green-300 p-4 text-black-800">
+      {{message}}
+    </p>
+    <div class="flex justify-center py-6">
+
+<form [formGroup]="castEntry" class="w-full max-w-lg">
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
+          Cast Name
+        </label>
+        <input formControlName="Name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="text" placeholder="Enter Cast Name">
+        <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+      </div>
+      <div class="w-full md:w-1/2 px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+          Date of birth
+        </label>
+        <input formControlName="DOB" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="date" placeholder="Doe">
+      </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+          Description
+        </label>
+        <textarea formControlName="Description" rows="6" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="Enter the description">
+        </textarea>
+        <!-- <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p> -->
+      </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+          city
+        </label>
+        <input formControlName="City" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="City">
+      </div>
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+          state
+        </label>
+        <input formControlName="State" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="State">
+      </div>
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+          country
+        </label>
+        <input formControlName="Country" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="Country">
+      </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
+          Profile Pic
+        </label>
+        <input (change)="onFileSelected($event)" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="file" multiple placeholder="Enter Movie Name">
+        <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+      </div>
+      <div class="w-full md:w-1/2 px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+          Gender
+        </label>
+        <div class="flex justify-center">
+            <!--First radio-->
+            <div class="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
+              <input
+                class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 "
+                type="radio"
+                formControlName="Gender"
+                value="male" />
+              <label
+                class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+                >Male</label
+              >
+            </div>
+          
+            <!--Second radio-->
+            <div class="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
+              <input
+                class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5"
+                type="radio"
+                formControlName="Gender"
+                value="female" />
+              <label
+                class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+                >Female</label
+              >
+            </div>
+          
+          </div>
+      </div>
+    </div>
+    <button (click)="onSubmit()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Submit
+    </button>
+  </form>
+  
+  
+  
+</div>
+
+  </div>
+
+</div>
+
+
+
+

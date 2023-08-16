@@ -1,0 +1,74 @@
+<div class="table-responsive">
+    <table class="table">
+        <caption></caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Average</th>
+                <th>grade</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of StuList">
+            <ng-container [ngSwitch]="item.Grade">
+                <ng-template ngSwitchCase="AA">
+                    <tr class="bg-success">
+                        <td>{{item.ID}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Age}}</td>
+                        <td>{{item.Average}}</td>
+                        <td>{{item.Grade}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template ngSwitchCase="AB">
+                    <tr class="bg-primary">
+                        <td>{{item.ID}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Age}}</td>
+                        <td>{{item.Average}}</td>
+                        <td>{{item.Grade}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template ngSwitchCase="BB">
+                    <tr class="bg-info">
+                        <td>{{item.ID}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Age}}</td>
+                        <td>{{item.Average}}</td>
+                        <td>{{item.Grade}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template ngSwitchCase="BC">
+                    <tr class="bg-secondary">
+                        <td>{{item.ID}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Age}}</td>
+                        <td>{{item.Average}}</td>
+                        <td>{{item.Grade}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template ngSwitchCase="CC">
+                    <tr class="bg-warning">
+                        <td>{{item.ID}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Age}}</td>
+                        <td>{{item.Average}}</td>
+                        <td>{{item.Grade}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template ngSwitchCase="FF">
+                    <tr class="bg-danger">
+                        <td>{{item.ID}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>{{item.Age}}</td>
+                        <td>{{item.Average}}</td>
+                        <td>{{item.Grade}}</td>
+                    </tr>
+                </ng-template>
+            </ng-container>
+
+        </tbody>
+    </table>
+</div>
+

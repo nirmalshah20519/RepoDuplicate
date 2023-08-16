@@ -1,0 +1,22 @@
+    <nav class="navbar navbar-expand-sm navbar-light my_bg">
+        <div class="container-fluid d-flex justify-contect-between">
+            <a class="navbar-brand text-light">Exam</a>
+            <a class="navbar-brand text-light">Ends in 
+            <span *ngIf="Min>=1" class="bg-success p-1 rounded-5 px-2">
+                <span>{{Min}}</span>:
+                <span>{{Sec | number:'2.0'}}</span>:
+                <span>{{Ms | number:'2.0'}}</span>
+            </span> 
+            <span *ngIf="Min<1" class="bg-danger p-1 rounded-5 px-2">
+                <span>{{Min}}</span>:
+                <span>{{Sec | number:'2.0'}}</span>:
+                <span>{{Ms | number:'2.0'}}</span>
+            </span>
+        </a>
+            
+            
+        </div>
+    </nav>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>

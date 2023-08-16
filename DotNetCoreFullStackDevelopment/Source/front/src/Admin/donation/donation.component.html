@@ -1,0 +1,29 @@
+<div class=" container">
+    <div class="table-responsive">
+        <table class="table table-primary">
+            <caption></caption>
+            <thead >
+                <tr>
+                    <th class="bg-dark text-light" scope="col">ID</th>
+                    <th class="bg-dark text-light" scope="col">Name</th>
+                    <th class="bg-dark text-light" scope="col">Address</th>
+                    <th class="bg-dark text-light" scope="col">Total Donated</th>
+                    <th class="bg-dark text-light" scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of data">
+                <tr class=" bg-danger" >
+                    <td> {{item.id}} </td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.address}}</td>
+                    <td [ngClass]="{'bg-success text-white fw-bold':item.total>10000}">{{ item.total | currency:'INR'}}</td>
+                    <td>
+                        <button class="btn btn-outline-dark me-2" [routerLink]="['../edit-user',item.id]">Edit</button>
+                        <button class="btn btn-danger" (click)="delete(item.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>

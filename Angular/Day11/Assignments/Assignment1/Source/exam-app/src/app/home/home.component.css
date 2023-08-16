@@ -1,0 +1,30 @@
+#main-cont{
+    background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#main_heading{
+    background: linear-gradient(25deg, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.my-btn{
+    background: linear-gradient(25deg, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    padding: 8px;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+}
+
+.my-btn:hover{
+    background: linear-gradient(65deg, #b8cbb8 0%, #b8cbb8 0%, #c766f5 0%, #e462db 33%, #ec4a8e 66%, #f03a86 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    border: 3px solid #e462db;
+    padding: 5px;
+}

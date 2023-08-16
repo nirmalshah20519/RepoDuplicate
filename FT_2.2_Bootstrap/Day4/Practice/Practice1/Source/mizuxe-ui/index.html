@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>Mizuxe</title>
+    <style>
+        #bg-img {
+            background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1600");
+            /* background-color: aqua; */
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+
+        #cardHover .card:hover {
+            background-color: #17a2b8 !important;
+            color: white !important;
+        }
+
+        #cardHover .card:hover .text-muted {
+            color: white !important;
+        }
+
+        #cardHover .card:hover em {
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body id="bg-img">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light bg-opacity-75 text-black sticky-top" id="myNav">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#"><img class="img-fluid me-4"
+                    src="https://i.ibb.co/pd0NqsY/mizuxe.png" alt="mizuxe">Mizuxe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarID">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="#about">About</a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="#meetAuth">Meet the Authors</a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="#getInTouch">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div data-bs-spy="scroll" data-bs-target="#myNav" data-bs-smooth-scroll="true">
+        <div class="container-fluid bg-info bg-opacity-50" id="home">
+            <div class="container pt-5">
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 col-sm-12 py-5">
+                        <div class="d-flex flex-column justify-content-center ms-lg-5">
+                            <p class="display-3 text-center text-white ps-lg-5 ms-lg-5">
+                                Do What you Dream of
+                            </p>
+                            <p class="text-white text-center fw-lighter ps-lg-5 ms-lg-5">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex labore facilis accusamus
+                                ullam,
+                                perferendis quibusdam repudiandae
+                            </p>
+                            <div class="d-flex justify-content-center ps-lg-5 ms-lg-5">
+                                <a class="btn btn-outline-light mb-3 fw-semibold">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                    Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12">
+                        <div class=" d-flex justify-content-center p-4">
+                            <img src="https://i.ibb.co/F4108pP/book.png" alt="book" class="img-fluid h-75">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container-fluid bg-dark">
+            <div class="container text-white">
+
+                <form action="" class="input-group p-4">
+                    <input type="text" class="form-control col-3 me-3" placeholder="Name">
+                    <input type="text" class="form-control col-3 me-3" placeholder="Email">
+                    <button type="submit" class="btn btn-info text-white col-3 me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-envelope-open" viewBox="0 0 16 16">
+                            <path
+                                d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.217V5.4a1 1 0 0 0-.53-.882l-6-3.2ZM15 7.383l-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2Z" />
+                        </svg>
+                        Subscribe
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+
+        <div class="container-fluid bg-light">
+            <div class="container d-flex flex-wrap flex-lg-nowrap justify-content-center p-4 mb-5" id="about">
+                <div class="d-inline-block border border-2 border-info mx-2 p-2">
+                    <p class="h3 text-center">Be Better</p>
+                    <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="d-inline-block bg-info mx-2 p-2">
+                    <p class="h3 text-center">Be Smarter</p>
+                    <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="d-inline-block border border-2 border-info mx-2 p-2">
+                    <p class="h3 text-center">Be Faster</p>
+                    <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="d-inline-block bg-info mx-2 p-2">
+                    <p class="h3 text-center">Be Stronger</p>
+                    <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+
+            <div class="container" >
+                <p class="display-6 fw-semibold text-info text-center">
+                    Why this Book ?
+                </p>
+                <div class="d-flex justify-content-center">
+                    <p
+                        class="text-center text-muted p-2 w-50 pb-4 border-bottom border-2 border-dark border-opacity-25">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur repudiandae quis et
+                        eligendi soluta inventore, debitis nesciunt explicabo blanditiis nisi tempora.
+                    </p>
+                </div>
+
+
+
+            </div>
+
+            <div class="container" id="meetAuth">
+                <div class="accordion pb-5" id="accordionExample">
+                    <div class="accordion-item text-center">
+                        <h2 id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                                </svg>
+                                Get inspired
+
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti rerum distinctio eum.
+                                Exercitationem aspernatur repellat quo optio vel ducimus quod dolor assumenda fugiat
+                                veritatis. Tenetur placeat error assumenda sequi nostrum.
+                                Veniam eius similique deserunt doloribus! Aut nulla sapiente deleniti optio corrupti
+                                cupiditate aperiam soluta. Quia expedita perferendis hic blanditiis eligendi nihil
+                                molestias nostrum ad, maiores excepturi quos corrupti, voluptates debitis.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item text-center">
+                        <h2 id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                                </svg>
+                                Gain The knowledge
+
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti rerum distinctio eum.
+                                Exercitationem aspernatur repellat quo optio vel ducimus quod dolor assumenda fugiat
+                                veritatis. Tenetur placeat error assumenda sequi nostrum.
+                                Veniam eius similique deserunt doloribus! Aut nulla sapiente deleniti optio corrupti
+                                cupiditate aperiam soluta. Quia expedita perferendis hic blanditiis eligendi nihil
+                                molestias nostrum ad, maiores excepturi quos corrupti, voluptates debitis.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item text-center">
+                        <h2 id="headingThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                                </svg>
+                                Open yout mind
+
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore tenetur quibusdam et
+                                adipisci illum rem ex odio quas? Distinctio suscipit consequatur quod rem sunt nostrum
+                                iusto? Ab, aut repellendus! Reprehenderit?
+                                Deleniti assumenda repellendus magni beatae optio, rem explicabo autem similique
+                                consequuntur cum animi aut voluptate quos sit dicta mollitia dolore neque consequatur!
+                                Dolores aliquam mollitia consectetur, labore sapiente atque ea.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mb-5" style="margin-bottom: 100px!important;" >
+                <p class="display-6 fw-semibold text-info text-center">
+                    Meet the Authors
+                </p>
+                <div class="d-flex justify-content-center">
+                    <p
+                        class="text-center text-muted p-2 w-50 pb-4 border-bottom border-2 border-dark border-opacity-25">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur repudiandae quis et
+                        eligendi soluta inventore, debitis nesciunt explicabo blanditiis nisi tempora.
+                    </p>
+                </div>
+            </div>
+
+            <div id="cardHover" class="container d-flex flex-wrap flex-lg-nowrap justify-content-center p-4 my-5 gap-5">
+                <div class="card me-lg-2 me-md-2 my-5 position-relative">
+                    <img class="img-fluid card-img rounded-circle mx-auto my-2 w-50 position-absolute translate-middle start-50"
+                        src="https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                        alt="Title">
+                    <div class="card-body" style="margin-top: 12vh;">
+                        <h4 class="card-title text-center">Martin Rhodes</h4>
+                        <h6 class="card-subtitle text-muted text-center">Lead Writer</h6>
+                        <p class="card-text text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Sapiente pariatur, cupiditate accusamus maxime non ipsum qui nemo</p>
+                    </div>
+                    <div class="d-flex p-2 flex-row flex-nowrap justify-content-center">
+                        <em class="bi bi-facebook h2 mx-auto text-info"></em>
+                        <em class="bi bi-twitter h2 mx-auto text-info"></em>
+                        <em class="bi bi-google h2 mx-auto text-info"></em>
+
+                    </div>
+                </div>
+
+                <div class="card me-lg-2 me-md-2 my-5 position-relative ">
+                    <img class="card-img rounded-circle mx-auto my-2 w-50 position-absolute translate-middle start-50"
+                        src="https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                        alt="Title">
+                    <div class="card-body" style="margin-top: 12vh;">
+                        <h4 class="card-title text-center">Todd Fisher</h4>
+                        <h6 class="card-subtitle text-muted text-center">Lead Writer</h6>
+                        <p class="card-text text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Sapiente pariatur, cupiditate accusamus maxime non ipsum qui nemo</p>
+                    </div>
+                    <div class="d-flex p-2 flex-row flex-nowrap justify-content-center">
+                        <em class="bi bi-facebook h2 mx-auto text-info"></em>
+                        <em class="bi bi-twitter h2 mx-auto text-info"></em>
+                        <em class="bi bi-google h2 mx-auto text-info"></em>
+
+                    </div>
+                </div>
+
+                <div class="card me-lg-2 me-md-2 my-5 position-relative ">
+                    <img class="card-img rounded-circle mx-auto my-2 w-50 position-absolute translate-middle start-50"
+                        src="https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                        alt="Title">
+                    <div class="card-body" style="margin-top: 12vh;">
+                        <h4 class="card-title text-center">Samuel Bryant</h4>
+                        <h6 class="card-subtitle text-muted text-center">Lead Writer</h6>
+                        <p class="card-text text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Sapiente pariatur, cupiditate accusamus maxime non ipsum qui nemo</p>
+                    </div>
+                    <div class="d-flex p-2 flex-row flex-nowrap justify-content-center">
+                        <em class="bi bi-facebook h2 mx-auto text-info"></em>
+                        <em class="bi bi-twitter h2 mx-auto text-info"></em>
+                        <em class="bi bi-google h2 mx-auto text-info"></em>
+
+                    </div>
+                </div>
+
+                <div class="card me-lg-2 me-md-2 my-5 position-relative ">
+                    <img class="card-img rounded-circle mx-auto my-2 w-50 position-absolute translate-middle start-50"
+                        src="https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                        alt="Title">
+                    <div class="card-body" style="margin-top: 12vh;">
+                        <h4 class="card-title text-center">Christine Simon</h4>
+                        <h6 class="card-subtitle text-muted text-center">Lead Writer</h6>
+                        <p class="card-text text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Sapiente pariatur, cupiditate accusamus maxime non ipsum qui nemo</p>
+                    </div>
+                    <div class="d-flex p-2 flex-row flex-nowrap justify-content-center">
+                        <em class="bi bi-facebook h2 mx-auto text-info"></em>
+                        <em class="bi bi-twitter h2 mx-auto text-info"></em>
+                        <em class="bi bi-google h2 mx-auto text-info"></em>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container" id="getInTouch">
+                <div class="row">
+                    <div class="col-lg-9 col-md-8 col-sm-12">
+                        <p class="h1">Get in Touch</p>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                            blanditiis molestias eaque at? Saepe quis inventore consectetur, magni magnam nihil eligendi
+                            est, expedita, veniam optio vel illo consequatur? Provident, natus.</p>
+
+                        <form action="">
+                            <div class="input-group mb-3">
+                                <em class="bi bi-person-fill input-group-text"></em>
+                                <input type="text" placeholder="Name" class="form-control">
+                            </div>
+                            <div class="input-group mb-3">
+                                <em class="bi bi-envelope-at-fill input-group-text"></em>
+                                <input type="email" placeholder="Email" class="form-control">
+                            </div>
+                            <div class="input-group mb-3">
+                                <em class="bi bi-pencil-fill input-group-text"></em>
+                                <textarea name="" id="" class="form-control" rows="8" placeholder="Message"></textarea>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="submit" class="btn btn-info w-100" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-12 d-flex justify-content-center align-items-center">
+                        <div>
+
+                            <img class="" src="https://i.ibb.co/p0x1yLF/bigLogo.png" alt="bigLogo" border="0">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container-fluid bg-info p-3">
+                <p class="text-white text-center">copyright © Mizuxe (Nirmal Shah)</p>
+
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

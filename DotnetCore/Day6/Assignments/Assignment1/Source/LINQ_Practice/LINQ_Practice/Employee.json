@@ -1,0 +1,74 @@
+[
+  {
+    "EMPLOYEE_ID": 1,
+    "FIRST_NAME": "John",
+    "LAST_NAME": "Abraham",
+    "SALARY": 1000000,
+    "JOINING_DATE": "2013-01-01 12:00:00",
+    "DEPARTMENT": "Banking"
+  },
+  {
+    "EMPLOYEE_ID": 2,
+    "FIRST_NAME": "Michael",
+    "LAST_NAME": "Clarke",
+    "SALARY": 800000,
+    "JOINING_DATE": "2013-01-01 12:00:00",
+    "DEPARTMENT": "Insurance"
+  },
+  {
+    "EMPLOYEE_ID": 3,
+    "FIRST_NAME": "Roy",
+    "LAST_NAME": "Thomas",
+    "SALARY": 700000,
+    "JOINING_DATE": "2013-02-01 12:00:00",
+    "DEPARTMENT": "Banking"
+  },
+  {
+    "EMPLOYEE_ID": 4,
+    "FIRST_NAME": "Tom",
+    "LAST_NAME": "Jose",
+    "SALARY": 600000,
+    "JOINING_DATE": "2012-02-01 12:00:00",
+    "DEPARTMENT": "Insurance"
+  },
+  {
+    "EMPLOYEE_ID": 5,
+    "FIRST_NAME": "Jerry",
+    "LAST_NAME": "Pinto",
+    "SALARY": 650000,
+    "JOINING_DATE": "2012-02-01 12:00:00",
+    "DEPARTMENT": "Insurance"
+  },
+  {
+    "EMPLOYEE_ID": 6,
+    "FIRST_NAME": "Philip",
+    "LAST_NAME": "Mathew",
+    "SALARY": 750000,
+    "JOINING_DATE": "2013-01-01 12:00:00",
+    "DEPARTMENT": "Services"
+  },
+  {
+    "EMPLOYEE_ID": 7,
+    "FIRST_NAME": "TestName1",
+    "LAST_NAME": "123",
+    "SALARY": 650000,
+    "JOINING_DATE": "2012-01-01 12:00:00",
+    "DEPARTMENT": "Services"
+  },
+  {
+    "EMPLOYEE_ID": 8,
+    "FIRST_NAME": "TestName2",
+    "LAST_NAME": "Lname%",
+    "SALARY": 500000,
+    "JOINING_DATE": "2012-02-01 12:00:00",
+    "DEPARTMENT": "Insurance"
+  },
+  {
+    "EMPLOYEE_ID": 9,
+    "FIRST_NAME": "TestName2",
+    "LAST_NAME": "Lname%",
+    "SALARY": 600000,
+    "JOINING_DATE": "2012-02-01 12:00:00",
+    "DEPARTMENT": "Insurance"
+  }
+]

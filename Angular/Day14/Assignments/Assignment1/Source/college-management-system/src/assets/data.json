@@ -1,0 +1,106 @@
+[
+    {
+        "SID": 13,
+        "Password": "123456",
+        "Name": "Bradley Bell",
+        "Gender": "male",
+        "Email": "ive@bafvu.bb",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 14,
+        "Password": "123456",
+        "Name": "Andre Dennis",
+        "Gender": "male",
+        "Email": "wudi@juttezsu.cy",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 15,
+        "Password": "123456",
+        "Name": "Helen Norman",
+        "Gender": "female",
+        "Email": "fi@vojaru.bs",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 16,
+        "Password": "123456",
+        "Name": "Seth Waters",
+        "Gender": "male",
+        "Email": "ukezu@sajekdo.zm",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 17,
+        "Password": "123456",
+        "Name": "Dustin Farmer",
+        "Gender": "female",
+        "Email": "pij@wehwertu.al",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 18,
+        "Password": "123456",
+        "Name": "Warren Rogers",
+        "Gender": "female",
+        "Email": "huv@od.edu",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 19,
+        "Password": "123456",
+        "Name": "Kevin Fisher",
+        "Gender": "male",
+        "Email": "mezajuv@nokab.th",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 20,
+        "Password": "123456",
+        "Name": "Jack Gonzalez",
+        "Gender": "female",
+        "Email": "up@uzdad.az",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 21,
+        "Password": "123456",
+        "Name": "Harriet Walters",
+        "Gender": "male",
+        "Email": "movu@sa.zm",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 22,
+        "Password": "123456",
+        "Name": "Andre Wallace",
+        "Gender": "male",
+        "Email": "rid@lieg.mk",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 23,
+        "Password": "123456",
+        "Name": "Sue Copeland",
+        "Gender": "female",
+        "Email": "ratjuziz@ez.be",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 24,
+        "Password": "123456",
+        "Name": "Lucinda Clarke",
+        "Gender": "male",
+        "Email": "lafub@lak.nf",
+        "CoursesEnrolled": []
+    },
+    {
+        "SID": 25,
+        "Password": "123456",
+        "Name": "Mayme Smith",
+        "Gender": "female",
+        "Email": "podwen@recbum.bf",
+        "CoursesEnrolled": []
+    }
+]

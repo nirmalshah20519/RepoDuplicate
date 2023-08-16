@@ -1,0 +1,27 @@
+<ng-container *ngIf="SubjectInfo;else NoData">
+    <p class="display-3 text-center text-dark"> {{SubjectInfo.SubjectName}}</p>
+    <ng-container *ngFor="let subData of SubjectInfo?.SubjectData">
+    <div class="accordion" [id]="SubjectInfo.SubjectName+'-'+subData.TaskType+'accordion'">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#' + subData.TaskType+'-content'" aria-expanded="false" aria-controls="collapseOne">
+              {{subData.TaskType}}
+            </button>
+          </h2>
+          <div [id]="subData.TaskType+'-content'" class="accordion-collapse collapse" [attr.data-bs-parent]="'#'+SubjectInfo.SubjectName+'-'+subData.TaskType+'accordion'">
+            <div class="accordion-body">
+              <ul class="list-group" *ngFor="let Task of subData.TaskDetails">
+                <li class="list-group-item d-flex justify-content-between align-items-center mb-2" routerLinkActive="mybg" [routerLink]="'/'+SubjectInfo.SubjectName+'/'+Task.Name" [queryParams]="{Name:SubjectInfo.SubjectName, TaskType:subData.TaskType}">
+                    {{Task.Name}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>  
+    </div>
+</ng-container>
+</ng-container>
+<ng-template #NoData> <p class="h1 text-dark text-center">No Data Found</p></ng-template>
+
+
+

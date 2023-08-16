@@ -1,0 +1,27 @@
+[
+  {
+    "EMPLOYEE_REF_ID": 1,
+    "INCENTIVE_DATE": "01-Feb-13",
+    "INCENTIVE_AMOUNT": 5000
+  },
+  {
+    "EMPLOYEE_REF_ID": 2,
+    "INCENTIVE_DATE": "01-Feb-13",
+    "INCENTIVE_AMOUNT": 3000
+  },
+  {
+    "EMPLOYEE_REF_ID": 3,
+    "INCENTIVE_DATE": "01-Feb-13",
+    "INCENTIVE_AMOUNT": 4000
+  },
+  {
+    "EMPLOYEE_REF_ID": 1,
+    "INCENTIVE_DATE": "01-Jan-13",
+    "INCENTIVE_AMOUNT": 4500
+  },
+  {
+    "EMPLOYEE_REF_ID": 2,
+    "INCENTIVE_DATE": "01-Jan-13",
+    "INCENTIVE_AMOUNT": 3500
+  }
+]

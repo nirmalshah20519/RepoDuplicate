@@ -1,0 +1,15 @@
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\bin\Debug\net6.0\LINQ_Practice.exe
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\bin\Debug\net6.0\LINQ_Practice.deps.json
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\bin\Debug\net6.0\LINQ_Practice.runtimeconfig.json
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\bin\Debug\net6.0\LINQ_Practice.dll
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\bin\Debug\net6.0\LINQ_Practice.pdb
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\obj\Debug\net6.0\LINQ_Practice.csproj.AssemblyReference.cache
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\obj\Debug\net6.0\LINQ_Practice.GeneratedMSBuildEditorConfig.editorconfig
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\obj\Debug\net6.0\LINQ_Practice.AssemblyInfoInputs.cache
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\obj\Debug\net6.0\LINQ_Practice.AssemblyInfo.cs
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\obj\Debug\net6.0\LINQ_Practice.csproj.CoreCompileInputs.cache
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\obj\Debug\net6.0\LINQ_Practice.dll
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\obj\Debug\net6.0\refint\LINQ_Practice.dll
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\obj\Debug\net6.0\LINQ_Practice.pdb
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\obj\Debug\net6.0\LINQ_Practice.genruntimeconfig.cache
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day6\Assignments\Assignment1\Source\LINQ_Practice\LINQ_Practice\obj\Debug\net6.0\ref\LINQ_Practice.dll

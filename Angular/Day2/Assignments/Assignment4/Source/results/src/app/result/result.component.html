@@ -1,0 +1,56 @@
+<ng-container *ngIf="currentStudent;else abc">
+    <div class="table-responsive container">
+        <p [class]="bgClass(average(currentStudent.Subjects))+str">Result</p>
+        <table class="table table-bordered table-striped-columns text-center">
+            <caption></caption>
+
+            <tr>
+              <th rowspan="2" colspan="2" scope="row"><img [src]="currentStudent.Image" [alt]="currentStudent.Name" style="width: 600px; height: 320px;"></th>
+              <th scope="row">Name</th>
+              <td>{{currentStudent.Name}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Address</th>
+              <td>{{currentStudent.Address}}</td>
+          </tr>
+          <tr>
+            <th scope="row">DOB</th>
+            <td>{{currentStudent.DOB|date:'mediumDate'}}</td>
+        </tr>
+          <tr>
+            <th scope="row">Name</th>
+            <th scope="row">Internal</th>
+            <th scope="row">External</th>
+            <th scope="row" title="(30% weightage Internal 70% External Weightage)">Total      </th>
+          </tr>
+          <ng-container *ngFor="let item of currentStudent.Subjects">
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.marks.internal}}</td>
+                <td>{{item.marks.external}}</td>
+                <td>{{totalMarks(item)}}</td>
+            </tr>
+          </ng-container>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Avg</td>
+            <td>{{average(currentStudent.Subjects)}}</td>
+        </tr>
+        <tr [class]="bgClass(average(currentStudent.Subjects))">
+            <td></td>
+            <td></td>
+            <td>Result</td>
+            <td>{{average(currentStudent.Subjects)>50?'Pass':'Fail'}}</td>
+        </tr>
+          </table>
+    </div>
+    
+</ng-container>
+<ng-template #abc>
+    <div class="container">
+        <p>No data found!</p>
+    </div>
+</ng-template>
+
+

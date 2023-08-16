@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ATTENDEE">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Attendings" Relationship="Self.FK__Attending__Atten__38996AB5" FromRole="ATTENDEE" ToRole="Attending" />
+    <NavigationProperty Name="HospitalEmployees" Relationship="Self.FK__HospitalE__EmpTy__32E0915F" FromRole="ATTENDEE" ToRole="HospitalEmployee" />
+  </EntityType>
+  <EntityType Name="DEPARTMENT">
+    <Key>
+      <PropertyRef Name="DeptID" />
+    </Key>
+    <Property Name="DeptID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeptName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="HospitalEmployees" Relationship="Self.FK__HospitalE__DeptI__31EC6D26" FromRole="DEPARTMENT" ToRole="HospitalEmployee" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK__Patient__DeptID__35BCFE0A" FromRole="DEPARTMENT" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Drug">
+    <Key>
+      <PropertyRef Name="DrugID" />
+    </Key>
+    <Property Name="DrugID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DrugName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TakeAt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Prescriptions" Relationship="Self.FK__Prescript__DrugI__3F466844" FromRole="Drug" ToRole="Prescription" />
+  </EntityType>
+  <EntityType Name="HospitalEmployee">
+    <Key>
+      <PropertyRef Name="EID" />
+    </Key>
+    <Property Name="EID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DeptID" Type="Int32" />
+    <Property Name="EmpTypeID" Type="Int32" />
+    <NavigationProperty Name="ATTENDEE" Relationship="Self.FK__HospitalE__EmpTy__32E0915F" FromRole="HospitalEmployee" ToRole="ATTENDEE" />
+    <NavigationProperty Name="DEPARTMENT" Relationship="Self.FK__HospitalE__DeptI__31EC6D26" FromRole="HospitalEmployee" ToRole="DEPARTMENT" />
+    <NavigationProperty Name="Prescriptions" Relationship="Self.FK__Prescript__PresB__3E52440B" FromRole="HospitalEmployee" ToRole="Prescription" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DeptID" Type="Int32" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Height_in_cms_" Type="Int32" Nullable="false" />
+    <Property Name="Weight_in_kg_" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DEPARTMENT" Relationship="Self.FK__Patient__DeptID__35BCFE0A" FromRole="Patient" ToRole="DEPARTMENT" />
+    <NavigationProperty Name="Attendings" Relationship="Self.FK__Attending__Patie__37A5467C" FromRole="Patient" ToRole="Attending" />
+  </EntityType>
+  <EntityType Name="Prescription">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PresDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PresByID" Type="Int32" />
+    <Property Name="DrugID" Type="Int32" />
+    <Property Name="Days" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Drug" Relationship="Self.FK__Prescript__DrugI__3F466844" FromRole="Prescription" ToRole="Drug" />
+    <NavigationProperty Name="HospitalEmployee" Relationship="Self.FK__Prescript__PresB__3E52440B" FromRole="Prescription" ToRole="HospitalEmployee" />
+  </EntityType>
+  <EntityType Name="Attending">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="AttendeeID" />
+      <PropertyRef Name="AttendeeTypeID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="AttendeeID" Type="Int32" Nullable="false" />
+    <Property Name="AttendeeTypeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ATTENDEE" Relationship="Self.FK__Attending__Atten__38996AB5" FromRole="Attending" ToRole="ATTENDEE" />
+    <NavigationProperty Name="Patient" Relationship="Self.FK__Attending__Patie__37A5467C" FromRole="Attending" ToRole="Patient" />
+  </EntityType>
+  <Association Name="FK__Attending__Atten__38996AB5">
+    <End Role="ATTENDEE" Type="Self.ATTENDEE" Multiplicity="1" />
+    <End Role="Attending" Type="Self.Attending" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATTENDEE">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="Attending">
+        <PropertyRef Name="AttendeeTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HospitalE__EmpTy__32E0915F">
+    <End Role="ATTENDEE" Type="Self.ATTENDEE" Multiplicity="0..1" />
+    <End Role="HospitalEmployee" Type="Self.HospitalEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATTENDEE">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="HospitalEmployee">
+        <PropertyRef Name="EmpTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HospitalE__DeptI__31EC6D26">
+    <End Role="DEPARTMENT" Type="Self.DEPARTMENT" Multiplicity="0..1" />
+    <End Role="HospitalEmployee" Type="Self.HospitalEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENT">
+        <PropertyRef Name="DeptID" />
+      </Principal>
+      <Dependent Role="HospitalEmployee">
+        <PropertyRef Name="DeptID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient__DeptID__35BCFE0A">
+    <End Role="DEPARTMENT" Type="Self.DEPARTMENT" Multiplicity="0..1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENT">
+        <PropertyRef Name="DeptID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="DeptID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Prescript__DrugI__3F466844">
+    <End Role="Drug" Type="Self.Drug" Multiplicity="0..1" />
+    <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drug">
+        <PropertyRef Name="DrugID" />
+      </Principal>
+      <Dependent Role="Prescription">
+        <PropertyRef Name="DrugID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Prescript__PresB__3E52440B">
+    <End Role="HospitalEmployee" Type="Self.HospitalEmployee" Multiplicity="0..1" />
+    <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HospitalEmployee">
+        <PropertyRef Name="EID" />
+      </Principal>
+      <Dependent Role="Prescription">
+        <PropertyRef Name="PresByID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Attending__Patie__37A5467C">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="Attending" Type="Self.Attending" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="Attending">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HospitalSystem" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ATTENDEEs" EntityType="Self.ATTENDEE" />
+    <EntitySet Name="DEPARTMENTs" EntityType="Self.DEPARTMENT" />
+    <EntitySet Name="Drugs" EntityType="Self.Drug" />
+    <EntitySet Name="HospitalEmployees" EntityType="Self.HospitalEmployee" />
+    <EntitySet Name="Patients" EntityType="Self.Patient" />
+    <EntitySet Name="Prescriptions" EntityType="Self.Prescription" />
+    <EntitySet Name="Attendings" EntityType="Self.Attending" />
+    <AssociationSet Name="FK__Attending__Atten__38996AB5" Association="Self.FK__Attending__Atten__38996AB5">
+      <End Role="ATTENDEE" EntitySet="ATTENDEEs" />
+      <End Role="Attending" EntitySet="Attendings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HospitalE__EmpTy__32E0915F" Association="Self.FK__HospitalE__EmpTy__32E0915F">
+      <End Role="ATTENDEE" EntitySet="ATTENDEEs" />
+      <End Role="HospitalEmployee" EntitySet="HospitalEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HospitalE__DeptI__31EC6D26" Association="Self.FK__HospitalE__DeptI__31EC6D26">
+      <End Role="DEPARTMENT" EntitySet="DEPARTMENTs" />
+      <End Role="HospitalEmployee" EntitySet="HospitalEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient__DeptID__35BCFE0A" Association="Self.FK__Patient__DeptID__35BCFE0A">
+      <End Role="DEPARTMENT" EntitySet="DEPARTMENTs" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Prescript__DrugI__3F466844" Association="Self.FK__Prescript__DrugI__3F466844">
+      <End Role="Drug" EntitySet="Drugs" />
+      <End Role="Prescription" EntitySet="Prescriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Prescript__PresB__3E52440B" Association="Self.FK__Prescript__PresB__3E52440B">
+      <End Role="HospitalEmployee" EntitySet="HospitalEmployees" />
+      <End Role="Prescription" EntitySet="Prescriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Attending__Patie__37A5467C" Association="Self.FK__Attending__Patie__37A5467C">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="Attending" EntitySet="Attendings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

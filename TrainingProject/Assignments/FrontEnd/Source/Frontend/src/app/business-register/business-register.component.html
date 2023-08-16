@@ -1,0 +1,158 @@
+<p>business-register works!</p>
+<div class=" mx-auto">
+    <ng-container>
+        <div class=" w-1/4 mx-auto">        
+          <p class=" text-2xl text-red-500 bold py-4">
+            Theatre Admin Registration
+          </p>
+          <p class=" text-md text-slate-700 bg-green-300 bold p-2 mb-4" *ngIf="validFlag">
+            {{msg}}
+          </p>
+        <form [formGroup]="registerForm">
+          <div class=" grid grid-cols-2 gap-4">
+            <div class=" mb-6">
+            <div class="relative mb-1" data-te-input-wrapper-init>
+              <input
+                type="text"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                formControlName="firstName"
+                placeholder="First Name" />
+              <label
+                for="exampleFormControlInput3"
+                class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none "
+                >First Name
+              </label>
+            </div>
+            <div *ngIf="registerForm.get('firstName')?.errors && registerForm.get('firstName')?.touched">
+              <div *ngIf="registerForm.get('firstName')?.errors?.['required']" class=" text-red-500 font-medium">First Name is required.</div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <div class="relative mb-1 " data-te-input-wrapper-init>
+              <input
+                type="text"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                formControlName="lastName"
+                placeholder="Last Name" />
+              <label
+                class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none "
+                >Last Name
+              </label>
+            </div>
+            <div *ngIf="registerForm.get('lastName')?.errors && registerForm.get('lastName')?.touched">
+              <div *ngIf="registerForm.get('lastName')?.errors?.['required']" class=" text-red-500 font-medium">Last Name is required.</div>
+            </div>
+          </div>
+
+          </div>
+          <!-- Email input -->
+          <div class=" mb-6">
+            <div class="relative mb-1" data-te-input-wrapper-init>
+              <input
+                type="text"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                formControlName="Email"
+                placeholder="Email address" />
+              <label
+                for="exampleFormControlInput3"
+                class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none "
+                >Email address
+              </label>
+            </div>
+            <div *ngIf="registerForm.get('Email')?.errors && registerForm.get('Email')?.touched">
+              <div *ngIf="registerForm.get('Email')?.errors?.['required']" class=" text-red-500 font-medium">Email is required.</div>
+              <div *ngIf="registerForm.get('Email')?.errors?.['email']" class=" text-red-500 font-medium">Email is not valid.</div>
+            </div>
+          </div>
+          
+
+          <!-- Password input -->
+          <div class=" mb-6">
+          <div class="relative mb-1" data-te-input-wrapper-init>
+            <input
+              type="password"
+              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              formControlName="Password"
+              placeholder="Password" />
+            <label
+              class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+              >Password
+            </label>
+          </div>
+          <div *ngIf="registerForm.get('Password')?.invalid && (registerForm.get('Password')?.dirty || registerForm.get('Password')?.touched)" class="text-red-500">Password is required.</div>
+        </div>
+          <div class=" mb-6">
+          <div class="relative mb-1" data-te-input-wrapper-init>
+            <input
+              type="password"
+              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              formControlName="ConfirmPassword"
+              placeholder="Confirm Password" />
+            <label
+              class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+              >Confirm Password
+            </label>
+          </div>
+          <div *ngIf="registerForm.get('ConfirmPassword')?.invalid && (registerForm.get('ConfirmPassword')?.dirty || registerForm.get('ConfirmPassword')?.touched)" class="text-red-500">
+            <ng-container *ngIf="registerForm.get('ConfirmPassword')?.errors?.['passwordMismatch']">Passwords do not match.</ng-container>
+            <ng-container *ngIf="!registerForm.get('ConfirmPassword')?.errors?.['passwordMismatch']">Confirm Password is required.</ng-container>
+          </div>
+          </div>
+          <div class=" grid grid-cols-2 gap-4">
+            <div class=" mb-0">
+
+            
+            <div class="relative mb-6" data-te-input-wrapper-init>
+              <input
+                type="date"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                formControlName="DOB"
+                placeholder="Date of Birth" />
+              <label
+                class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none "
+                >Date of Birth
+              </label>
+            </div>
+            <div *ngIf="registerForm.get('DOB')?.invalid && (registerForm.get('DOB')?.dirty || registerForm.get('DOB')?.touched)" class="text-red-500">Date of Birth is required.</div>
+            </div>
+            <div class=" mb-0">
+
+            
+            <div class="relative mb-6" data-te-input-wrapper-init>
+              <input
+                type="text"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                formControlName="PhoneNo"
+                placeholder="Phone No" />
+              <label
+                class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none "
+                >Phone No
+              </label>
+            </div>
+            <div *ngIf="registerForm.get('PhoneNo')?.invalid && (registerForm.get('PhoneNo')?.dirty || registerForm.get('PhoneNo')?.touched)" class="text-red-500">
+              <div *ngIf="registerForm.get('PhoneNo')?.errors?.['required']">Phone No is required.</div>
+              <div *ngIf="registerForm.get('PhoneNo')?.errors?.['pattern']">Phone No must be 10 digits.</div>
+            </div>
+          </div>
+        </div>
+
+
+          <!-- Submit button -->
+          
+          <button
+          class="mb-3 flex w-full items-center justify-center rounded bg-primary px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+          style="background-color: #3b5998"
+          [ngClass]="{' opacity-50 pointer-events-none': registerForm.invalid}"
+          [disabled]="registerForm.invalid"
+          (click)="onRegister()"
+          role="button"
+          data-te-ripple-init
+          data-te-ripple-color="light">
+          
+          Register 
+        </button>
+          
+        </form>
+    </div>
+      </ng-container>
+</div>

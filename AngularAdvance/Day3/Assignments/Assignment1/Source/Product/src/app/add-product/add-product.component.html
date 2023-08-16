@@ -1,0 +1,150 @@
+<form [formGroup]="product">
+  <div class="mb-3 w-25 mx-auto mt-5">
+    <p class="h1 text-center">Product Form</p>
+  </div>
+  <div class="mb-2 w-25 mx-auto">
+    <label for="" class="form-label">Name </label>
+    <input
+      type="text"
+      formControlName="Name"
+      class="form-control"
+      name=""
+      id=""
+      aria-describedby="helpId"
+      placeholder=""
+    /><ng-container *ngIf="product.invalid && (product.touched || product.dirty)">
+    <div
+      *ngIf="
+        product.controls['Name'].errors &&
+        product.controls['Name'].hasError('required')
+      "
+      class="alert alert-danger"
+    >
+      This field is required.
+    </div>
+  </ng-container>
+  </div>
+  <div class="mb-2 w-25 mx-auto">
+    <label for="" class="form-label">Price </label>
+    <input
+      type="text"
+      formControlName="Price"
+      class="form-control"
+      name=""
+      id=""
+      aria-describedby="helpId"
+      placeholder=""
+    />
+    <ng-container *ngIf="product.invalid && (product.touched || product.dirty)">
+    <div
+      *ngIf="
+        product.controls['Price'].errors &&
+        product.controls['Price'].hasError('required')
+      "
+      class="alert alert-danger"
+    >
+      This field is required.
+    </div>
+    <div
+      *ngIf="
+        product.controls['Price'].errors &&
+        product.controls['Price'].hasError('min')
+      "
+      class="alert alert-danger"
+    >
+      The price must be a positive number.
+    </div>
+  </ng-container>
+  </div>
+  
+  <div class="mb-2 w-25 mx-auto">
+    <label for="" class="form-label">Qty </label>
+    <input
+      type="text"
+      formControlName="Qty"
+      class="form-control"
+      name=""
+      id=""
+      aria-describedby="helpId"
+      placeholder=""
+    />
+    <ng-container *ngIf="product.invalid && (product.touched || product.dirty)">
+
+    <div
+      *ngIf="
+        product.controls['Qty'].errors &&
+        product.controls['Qty'].hasError('required')
+      "
+      class="alert alert-danger"
+    >
+      This field is required.
+    </div>
+    <div
+      *ngIf="
+        product.controls['Qty'].errors &&
+        product.controls['Qty'].hasError('min')
+      "
+      class="alert alert-danger"
+    >
+      The quantity must be a positive number greater than 0.
+    </div>
+  </ng-container>
+  </div>
+  <div class="mb-2 w-25 mx-auto">
+    <label for="" class="form-label">Total </label>
+    <input
+      type="text"
+      formControlName="Total"
+      class="form-control"
+      name=""
+      id=""
+      aria-describedby="helpId"
+      placeholder=""
+    />
+    <ng-container *ngIf="product.invalid && (product.touched || product.dirty)">
+
+    <div
+      *ngIf="
+        product.controls['Total'].errors &&
+        product.controls['Total'].hasError('required')
+      "
+      class="alert alert-danger"
+    >
+      This field is required.
+    </div>
+  </ng-container>
+  </div>
+  <div class="mb-2 w-25 mx-auto">
+    <label for="" class="form-label">Discount </label>
+    <input
+      type="text"
+      formControlName="Discount"
+      class="form-control"
+      name=""
+      id=""
+      aria-describedby="helpId"
+      placeholder=""
+    />
+    <ng-container *ngIf="product.invalid && (product.touched || product.dirty) && product.controls['Discount'].errors">
+
+    <div
+      *ngIf="
+        product.controls['Discount'].errors &&
+        product.controls['Discount'].hasError('required')
+      "
+      class="alert alert-danger"
+    >
+      This field is required.
+    </div>
+    <div
+      *ngIf="
+        product.controls['Discount'].errors &&
+        product.controls['Discount'].hasError('pattern')
+      "
+      class="alert alert-danger"
+    >
+      The discount must be 10, 20, or 30.
+    </div>
+  </ng-container>
+  </div>
+</form>

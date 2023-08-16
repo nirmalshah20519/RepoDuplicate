@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./public/style.css">
+  <link rel="shortcut icon" href="./public/n.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <script src="https://cdn.tailwindcss.com/3.2.4" integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        fontFamily: {
+          sans: ["Roboto", "sans-serif"],
+          body: ["Roboto", "sans-serif"],
+          mono: ["ui-monospace", "monospace"],
+        },
+      },
+      corePlugins: {
+        preflight: false,
+      },
+    };
+  </script>
+  <title>Tailwind Extra Task</title>
+</head>
+
+<body class="font-myfont overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav
+    class="flex-no-wrap z-50 flex w-full items-center justify-between bg-white py-4 shadow-md shadow-black/5 lg:flex-wrap lg:justify-between bg-colour-2 sticky top-0"
+    data-te-navbar-ref>
+    <div class="flex w-full flex-wrap items-center justify-between px-6">
+      <button
+        class="block border-0 bg-transparent py-2 px-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
+        type="button" data-te-toggle="modal" data-te-target="#exampleModalFullscreen" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="[&>svg]:w-7">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+            <path fill-rule="evenodd"
+              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+              clip-rule="evenodd" />
+          </svg>
+        </span>
+      </button>
+      <div class="!visible hidden items-center lg:flex lg:justify-evenly lg:w-screen " id="navbarSupportedContent1"
+        data-te-collapse-item>
+        <a class="mt-2 mr-2 flex items-center lg:mt-0" href="#">
+          <img src="./images/hau_gitschberge_horizontal.png" class="lg:h-16" alt="" loading="lazy" />
+        </a>
+        <!-- Left links -->
+        <ul class="list-style-none flex flex-col pl-0 lg:flex-row uppercase" data-te-navbar-nav-ref>
+          <li class="lg:pr-2 " data-te-nav-item-ref>
+            <a class="text-neutral-500 hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+              href="#" data-te-nav-link-ref>Home</a>
+          </li>
+          <li class="lg:pr-2 " data-te-nav-item-ref>
+            <a class="text-neutral-500 hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+              href="#" data-te-nav-link-ref>Blog</a>
+          </li>
+          <li class="lg:pr-2 " data-te-nav-item-ref>
+            <a class="text-neutral-500 hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+              href="#" data-te-nav-link-ref>Features</a>
+          </li>
+          <li class="lg:pr-2 " data-te-nav-item-ref>
+            <a class="text-neutral-500 hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+              href="#" data-te-nav-link-ref>Categories</a>
+          </li>
+          <li class="lg:pr-2 " data-te-nav-item-ref>
+            <a class="text-neutral-500 hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+              href="#" data-te-nav-link-ref>About</a>
+          </li>
+          <li class="lg:pr-2 " data-te-nav-item-ref>
+            <a class="text-neutral-500 hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+              href="#" data-te-nav-link-ref>Contact</a>
+          </li>
+          <li class="lg:pr-2 " data-te-nav-item-ref>
+            <a class="text-neutral-500 hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+              href="#" data-te-nav-link-ref>Shop</a>
+          </li>
+          <li class="lg:pr-2 " data-te-nav-item-ref>
+            <a class="text-neutral-500 hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+              href="#" data-te-nav-link-ref>Portfolio</a>
+          </li>
+          <li class="lg:pr-2 " data-te-nav-item-ref>
+            <div>
+              <input
+                class="mt-[0.3rem] mr-2 h-3.5 w-8 appearance-none rounded-[0.4375rem] bg-[rgba(0,0,0,0.25)] outline-none before:pointer-events-none before:absolute before:h-3.5 before:w-3.5 before:rounded-full before:bg-transparent before:content-[''] after:absolute after:z-[2] after:-mt-[0.1875rem] after:h-5 after:w-5 after:rounded-full after:border-none after:bg-white after:shadow-[0_0px_3px_0_rgb(0_0_0_/_7%),_0_2px_2px_0_rgb(0_0_0_/_4%)] after:transition-[background-color_0.2s,transform_0.2s] after:content-[''] checked:bg-primary checked:after:absolute checked:after:z-[2] checked:after:-mt-[3px] checked:after:ml-[1.0625rem] checked:after:h-5 checked:after:w-5 checked:after:rounded-full checked:after:border-none checked:after:bg-primary checked:after:shadow-[0_3px_1px_-2px_rgba(0,0,0,0.2),_0_2px_2px_0_rgba(0,0,0,0.14),_0_1px_5px_0_rgba(0,0,0,0.12)] checked:after:transition-[background-color_0.2s,transform_0.2s] checked:after:content-[''] hover:cursor-pointer focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[3px_-1px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-5 focus:after:w-5 focus:after:rounded-full focus:after:content-[''] checked:focus:border-primary checked:focus:bg-primary checked:focus:before:ml-[1.0625rem] checked:focus:before:scale-100 checked:focus:before:shadow-[3px_-1px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
+                type="checkbox" role="switch" id="flexSwitchCheckDefault02" checked />
+            </div>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+  </nav>
+
+<!-- Modal -->
+<div
+  data-te-modal-init
+  class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+  id="exampleModalFullscreen"
+  tabindex="-1"
+  aria-labelledby="exampleModalFullscreenLabel"
+  aria-hidden="true">
+  <div
+    data-te-modal-dialog-ref
+    class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[0px]:m-0 min-[0px]:h-full min-[0px]:max-w-none">
+    <div
+      class=" pointer-events-auto relative flex w-full flex-col rounded-md bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600 min-[0px]:h-full min-[0px]:rounded-none min-[0px]:border-0">
+      <div
+        class="bg-colour-4 flex flex-shrink-0 items-center justify-start rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50 min-[0px]:rounded-none">
+        <button
+        type="button"
+        class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+        data-te-modal-dismiss
+        aria-label="Close">
+        
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-6 w-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+        <div class="flex w-full justify-center">
+          <h5
+          class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+          id="exampleModalFullscreenLabel">
+          <img src="./images/hau_gitschberge_horizontal.png" class="h-12" alt="">
+        </h5>
+      </div>        
+
+      </div>
+      <div class="relative p-4 min-[0px]:overflow-y-auto bg-colour-4 h-screen ">
+        <p class="px-10 text-center leading-[3rem]">
+          <ul class="list-style-none flex flex-col pl-0 lg:flex-row uppercase text-xl text-white" data-te-navbar-nav-ref>
+            <li class="lg:pr-2 mt-4 " data-te-nav-item-ref>
+              <a class="text-white hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+                href="#" data-te-nav-link-ref>Home</a>
+            </li>
+            <li class="lg:pr-2 mt-4 " data-te-nav-item-ref>
+              <a class="text-white hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+                href="#" data-te-nav-link-ref>Blog</a>
+            </li>
+            <li class="lg:pr-2 mt-4 " data-te-nav-item-ref>
+              <a class="text-white hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+                href="#" data-te-nav-link-ref>Features</a>
+            </li>
+            <li class="lg:pr-2 mt-4 " data-te-nav-item-ref>
+              <a class="text-white hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+                href="#" data-te-nav-link-ref>Categories</a>
+            </li>
+            <li class="lg:pr-2 mt-4 " data-te-nav-item-ref>
+              <a class="text-white hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+                href="#" data-te-nav-link-ref>About</a>
+            </li>
+            <li class="lg:pr-2 mt-4 " data-te-nav-item-ref>
+              <a class="text-white hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+                href="#" data-te-nav-link-ref>Contact</a>
+            </li>
+            <li class="lg:pr-2 mt-4 " data-te-nav-item-ref>
+              <a class="text-white hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+                href="#" data-te-nav-link-ref>Shop</a>
+            </li>
+            <li class="lg:pr-2 mt-4 " data-te-nav-item-ref>
+              <a class="text-white hover:text-colour-active focus:text-colour-active disabled:text-black/30  lg:px-2 [&.active]:text-colour-active"
+                href="#" data-te-nav-link-ref>Portfolio</a>
+            </li>
+            <li class="lg:pr-2 " data-te-nav-item-ref>
+              <div>
+                <input
+                  class="mt-[0.3rem] mr-2 h-3.5 w-8 appearance-none rounded-[0.4375rem] bg-[rgba(0,0,0,0.25)] outline-none before:pointer-events-none before:absolute before:h-3.5 before:w-3.5 before:rounded-full before:bg-transparent before:content-[''] after:absolute after:z-[2] after:-mt-[0.1875rem] after:h-5 after:w-5 after:rounded-full after:border-none after:bg-white after:shadow-[0_0px_3px_0_rgb(0_0_0_/_7%),_0_2px_2px_0_rgb(0_0_0_/_4%)] after:transition-[background-color_0.2s,transform_0.2s] after:content-[''] checked:bg-primary checked:after:absolute checked:after:z-[2] checked:after:-mt-[3px] checked:after:ml-[1.0625rem] checked:after:h-5 checked:after:w-5 checked:after:rounded-full checked:after:border-none checked:after:bg-primary checked:after:shadow-[0_3px_1px_-2px_rgba(0,0,0,0.2),_0_2px_2px_0_rgba(0,0,0,0.14),_0_1px_5px_0_rgba(0,0,0,0.12)] checked:after:transition-[background-color_0.2s,transform_0.2s] checked:after:content-[''] hover:cursor-pointer focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[3px_-1px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-5 focus:after:w-5 focus:after:rounded-full focus:after:content-[''] checked:focus:border-primary checked:focus:bg-primary checked:focus:before:ml-[1.0625rem] checked:focus:before:scale-100 checked:focus:before:shadow-[3px_-1px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
+                  type="checkbox" role="switch" id="flexSwitchCheckDefault02" checked />
+              </div>
+            </li>
+          </ul>
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+  <!-- DIV-1 -->
+
+  <div class="bg-colour-1 overflow-x-hidden py-12">
+
+    <div class="flex flex-row overflow-x-scroll  w-fit justify-between scrollbar-hide xl:px-96 md:py-12">
+      <img src="./images/div1_img1.png" alt="" class=" md:mt-12 ">
+      <img src="./images/div1_img2.png" alt="" class=" md:-mt-12 ">
+      <img src="./images/div1_img3.png" alt="" class=" md:mt-12 ">
+    </div>
+    <div class=" lg:w-auto lg:px-56 md:mx-20 lg:mx-0">
+      <p class="text-center text-lg uppercase italic md:-mt-12">
+        hey there
+
+      </p>
+      <p class="text-5xl italic text-center">I’m Haus</p>
+      <p class="text-lg font-myfont mt-4 text-justify md:px-0 px-6 py-6">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius neque recusandae unde, cumque maiores
+        reprehenderit dignissimos, laudantium veritatis dolore ea optio magnam quam quae repellendus voluptatibus
+        repellat dolor adipisci aspernatur.
+        Voluptatibus eum doloremque saepe? Accusantium reprehenderit qui odio dolores in dicta vitae facere omnis quasi
+        sed obcaecati quas itaque provident consequuntur voluptates sit ducimus, error est? Rem possimus dolorem fugit.
+
+      </p>
+      <div class="xl:w-fit flex justify-center mx-auto">
+        <p
+          class="uppercase italic text-center border-2 border-colour-3 mx-40 xl:mx-40 p-2 hover:bg-colour-3 hover:text-white hover:cursor-pointer">
+
+          Read the whole story
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DIV-2 -->
+
+  <div class="bg-colour-2 py-12">
+
+    <div class="flex flex-col md:flex-row justify-center xl:mx-32">
+      <img src="./images/div2_img1.png" alt="Div 2 Img 1">
+      <div class="p-8">
+        <p class="text-4xl">
+          Condimentum Magna Vel Sodales Mollis Nisl Nibh Ornare Eros
+        </p>
+        <hr class="bg-colour-active py-0.5 w-16 my-3">
+        <p class="text-xl">
+          Nunc condimentum, magna vel sodales mollis, nisl nibh ornare eros, vel malesuada nunc metus. Aenean vitae arcu
+          auctor, imperdiet nisl quis interdum lacus.
+        </p>
+        <p class="w-fit p-1 px-2 italic text-xl border-2 border-colour-3 mt-3 hover:bg-colour-3 hover:text-white hover:cursor-pointer">
+          Get Started
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- DIV-3 -->
+
+  <div class="py-12 mx-5">
+
+    <div class="xl:mx-36 md:grid grid-cols-3 gap-2 hidden">
+      <div class="flex flex-col justify-between gap-y-32">
+        <div class="bg-[url('/images/architecture.png')] bg-no-repeat h-80 bg-cover content-center  ">
+          <div class="h-full w-full relative hover:bg-black hover:bg-opacity-50">
+            <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl bg-white hover:w-full hover:text-center p-2 capitalize">            
+              architecture
+            </p>
+          </div>          
+        </div>
+
+        <div class="bg-[url('/images/photography.png')] bg-no-repeat h-80 bg-cover content-center  ">
+          <div class="h-full w-full relative hover:bg-black hover:bg-opacity-50">
+            <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl bg-white hover:w-full hover:text-center p-2 capitalize">            
+              photography
+            </p>
+          </div>          
+        </div>
+        
+      </div>
+      <div class="py-44 text-colour-5 ">
+
+        <div class="my-8">
+          <p class="uppercase italic text-2xl w-full text-center">The portfolio</p>
+          <p class="uppercase font-extrabold text-7xl w-full text-center mt-4">
+            view <br> recent <br> work
+          </p>
+        </div>
+        
+      </div>
+      <div class="flex flex-col justify-between gap-y-32">
+        <div class="bg-[url('/images/interior.png')] bg-no-repeat h-80 bg-cover content-center  ">
+          <div class="h-full w-full relative hover:bg-black hover:bg-opacity-50">
+            <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl bg-white hover:w-full hover:text-center p-2 capitalize">            
+              Interior
+            </p>
+          </div>          
+        </div>
+
+        <div class="bg-[url('/images/animal.png')] bg-no-repeat h-80 bg-cover content-center  ">
+          <div class="h-full w-full relative hover:bg-black hover:bg-opacity-50">
+            <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl bg-white hover:w-full hover:text-center p-2 capitalize">            
+              animal
+            </p>
+          </div>          
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- DIV-4 -->
+
+  <div class="bg-colour-2 py-12">
+
+    <div class="flex flex-col-reverse md:flex-row justify-center xl:mx-32">
+      <div class="p-8 border-r-2 border-colour-3 md:p-32">
+        <p class="text-4xl capitalize">
+          tOOL FOR CREATIVES
+        </p>
+        <hr class="bg-colour-active py-0.5 w-16 my-3">
+        <p class="text-xl text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error accusamus magnam rem modi rerum porro reiciendis accusantium aspernatur deleniti! Dicta, accusamus tempora? Itaque fugiat nisi quia. Tempore ex quod sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, nostrum iure rerum culpa officiis dolore porro ipsa nulla aliquam sequi animi molestias, quis iste obcaecati, eos totam ea ex sint.
+        </p>
+        <p class="w-fit p-1 px-2 italic text-xl border-2 border-colour-3 mt-3 hover:bg-colour-3 hover:text-white hover:cursor-pointer">
+          Get Started
+        </p>
+      </div>
+
+      <img src="./images/div4_img1.png" alt="Div 2 Img 1" class="md:h-96 lg:h-full p-8">
+
+
+    </div>
+
+  </div>
+
+
+  <!-- DIV-5 -->
+
+  <div class="bg-colour-2 overflow-x-scroll px-16">
+
+    <div class="flex flex-row  w-fit justify-between scrollbar-hide xl:px-24 lg:px-44 md:py-12 gap-4">
+      <div class="border-2 border-colour-3 relative py-12 pb-24 px-4 w-56 md:w-auto">
+        <p class="italic text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni id maiores, quam aspernatur consequatur expedita quisquam nisi itaque unde assumenda quia dolorum iusto totam blanditiis modi nesciunt necessitatibus tempore ipsam?"</p>
+        
+        <img src="./images/prof1.png" alt="profile 1" class="p-2 border-2 border-colour-3 rounded-full absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2">
+
+      </div>
+
+      <div class="border-2 border-colour-3 relative py-12 pb-24 px-4 w-56 md:w-auto">
+        <p class="italic text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni id maiores, quam aspernatur consequatur expedita quisquam nisi itaque unde assumenda quia dolorum iusto totam blanditiis modi nesciunt necessitatibus tempore ipsam?"</p>
+        
+        <img src="./images/prof1.png" alt="profile 1" class="p-2 border-2 border-colour-3 rounded-full absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2">
+
+      </div>
+
+      <div class="border-2 border-colour-3 relative py-12 pb-24 px-4 w-56  md:w-auto">
+        <p class="italic text-center">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni id maiores, quam aspernatur consequatur expedita quisquam nisi itaque unde assumenda quia dolorum iusto totam blanditiis modi nesciunt necessitatibus tempore ipsam?"</p>
+        
+        <img src="./images/prof1.png" alt="profile 1" class="p-2 border-2 border-colour-3 rounded-full absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2">
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- DIV 6  -->
+  <div class="bg-colour-1 py-16">
+    <div
+    id="carouselExampleIndicators"
+    class="relative mx-8 md:mx-16 lg:mx-32 border-3 border-colour-3"
+    data-te-carousel-init
+    data-te-carousel-slide>
+    <div
+      class="absolute right-0 bottom-0 left-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
+      data-te-carousel-indicators>
+      <button
+        type="button"
+        data-te-target="#carouselExampleIndicators"
+        data-te-slide-to="0"
+        data-te-carousel-active
+        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-current="true"
+        aria-label="Slide 1"></button>
+      <button
+        type="button"
+        data-te-target="#carouselExampleIndicators"
+        data-te-slide-to="1"
+        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-label="Slide 2"></button>
+      <button
+        type="button"
+        data-te-target="#carouselExampleIndicators"
+        data-te-slide-to="2"
+        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-label="Slide 3"></button>
+        <button
+        type="button"
+        data-te-target="#carouselExampleIndicators"
+        data-te-slide-to="3"
+        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+        aria-label="Slide 4"></button>
+    </div>
+    <div
+      class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+      <div
+        class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-item
+        data-te-carousel-active>
+        <img
+          src="./images/S1.png"
+          class="block w-full"
+          alt="Wild Landscape" />
+      </div>
+      <div
+        class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-item>
+        <img
+          src="./images/S2.png"
+          class="block w-full"
+          alt="Camera" />
+      </div>
+      <div
+        class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-item>
+        <img
+          src="./images/S3.png"
+          class="block w-full"
+          alt="Exotic Fruits" />
+      </div>
+      <div
+        class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+        data-te-carousel-item>
+        <img
+          src="./images/S4.png"
+          class="block w-full"
+          alt="Exotic Fruits" />
+      </div>
+      
+    </div>
+    <button
+      class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+      type="button"
+      data-te-target="#carouselExampleIndicators"
+      data-te-slide="prev">
+      <span class="inline-block h-8 w-8">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-6 w-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </span>
+      <span
+        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+        >Previous</span
+      >
+    </button>
+    <button
+      class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+      type="button"
+      data-te-target="#carouselExampleIndicators"
+      data-te-slide="next">
+      <span class="inline-block h-8 w-8">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-6 w-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </span>
+      <span
+        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+        >Next</span
+      >
+    </button>
+  </div>
+
+  </div>
+
+<!-- DIV-7  -->
+
+<ul
+  class="mb-5 flex list-none flex-col flex-wrap pl-0 md:flex-row mx-8"
+  role="tablist"
+  data-te-nav-ref>
+  <li role="presentation" class="flex-grow basis-0 text-center">
+    <a
+      href="#pills-home02"
+      class="my-2 block  px-7 pt-4 pb-3.5 text-3xl text-neutral-400 font-medium capitalize data-[te-nav-active]:text-black  md:mr-4 border-b-2 border-colour-5"
+      id="pills-home-tab02"
+      data-te-toggle="pill"
+      data-te-target="#pills-home02"
+      data-te-nav-active
+      role="tab"
+      aria-controls="pills-home02"
+      aria-selected="true"
+      >lifestyle</a
+    >
+  </li>
+  <li role="profile" class="flex-grow basis-0 text-center">
+    <a
+      href="#pills-profile02"
+      class="my-2 block  px-7 pt-4 pb-3.5 text-3xl text-neutral-400 font-medium capitalize data-[te-nav-active]:text-black  md:mr-4 border-b-2 border-red-400"
+      id="pills-profile-tab02"
+      data-te-toggle="pill"
+      data-te-target="#pills-profile02"
+      role="tab"
+      aria-controls="pills-profile02"
+      aria-selected="false"
+      >travel</a
+    >
+  </li>
+  <li role="contact" class="flex-grow basis-0 text-center">
+    <a
+      href="#pills-contact02"
+      class="my-2 block  px-7 pt-4 pb-3.5 text-3xl text-neutral-400 font-medium capitalize data-[te-nav-active]:text-black  md:mr-4 border-b-2 border-blue-600"
+      id="pills-contact-tab02"
+      data-te-toggle="pill"
+      data-te-target="#pills-contact02"
+      role="tab"
+      aria-controls="pills-contact02"
+      aria-selected="false"
+      >photos</a
+    >
+  </li>  
+</ul>
+<div class="mb-6 m-12 text-2xl text-justify">
+  <div
+    class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block first-letter:text-8xl p-2 border border-blue-600"
+    id="pills-home02"
+    role="tabpanel"
+    aria-labelledby="pills-home-tab02"
+    data-te-tab-active>
+    Lifestyle Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iure placeat commodi, laboriosam perspiciatis rem eos esse tenetur eius incidunt voluptas et alias porro est delectus quis magni provident facilis?
+    Nesciunt architecto veritatis delectus, numquam minima id laboriosam error eum ea suscipit accusantium nulla quas quam sed quos quae cupiditate quod est quibusdam, ipsum eaque itaque assumenda? Voluptates, eaque voluptatem.
+  </div>
+  <div
+    class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block first-letter:text-8xl p-2 border border-blue-600"
+    id="pills-profile02"
+    role="tabpanel"
+    aria-labelledby="pills-profile-tab02">
+    Travel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi odit nobis ratione! Rem, dolorum minus dolorem soluta, illo ab quam aut fuga impedit assumenda magni commodi molestias consectetur nisi provident.
+    Quae at consequuntur explicabo? Temporibus atque harum similique, pariatur ab reprehenderit corporis quia sapiente deserunt libero earum iure iste eveniet, tempora quo quis sit, corrupti velit hic rerum molestias quod!
+  </div>
+  <div
+    class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block first-letter:text-8xl p-2 border border-blue-600"
+    id="pills-contact02"
+    role="tabpanel"
+    aria-labelledby="pills-contact-tab02">
+     Photos Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi odit nobis ratione! Rem, dolorum minus dolorem soluta, illo ab quam aut fuga impedit assumenda magni commodi molestias consectetur nisi provident.
+    Quae at consequuntur explicabo? Temporibus atque harum similique, pariatur ab reprehenderit corporis quia sapiente deserunt libero earum iure iste eveniet, tempora quo quis sit, corrupti velit hic rerum molestias quod!
+  </div>
+</div>
+
+
+<!-- DIV-8  -->
+
+<div class="bg-colour-1 p-8 ">
+  <p class="text-4xl w-full text-center mb-8">Lets Collaborate Together</p>
+
+  <div class="columns-1 md:columns-2 lg:columns-4 mx-8 text-xl text-justify gap-16">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et dolor minima aut quasi optio quo facilis debitis. Id at corrupti sint voluptate natus fugit necessitatibus, earum doloremque doloribus architecto laboriosam.
+    Unde quidem nesciunt reprehenderit maxime cum quia ea totam obcaecati numquam, excepturi eligendi tempore minima mollitia nihil architecto quo et deserunt aut modi distinctio quam cupiditate nobis. Nemo, totam a.
+    Enim soluta quos provident deleniti, modi ipsum architecto alias sint autem, commodi porro! Adipisci deleniti quo, laudantium laborum placeat tempore odio architecto qui, ex aperiam nemo doloribus nulla ab minus?
+    Qui dignissimos, perspiciatis delectus, similique maiores, illum earum deserunt laborum sint eos expedita accusamus voluptate! Optio vel repudiandae numquam ut veritatis pariatur nam praesentium dolorem cumque ex, aut odit adipisci.
+    Tempora odio animi consectetur facere eligendi, voluptate facilis consequatur obcaecati dolore, blanditiis ipsum iure officia provident enim labore illum esse, veniam voluptatem nobis aliquid ipsam perferendis? Iure molestiae earum dolorem!
+  </div>
+
+</div>
+
+<!-- DIV-8  -->
+
+<div class=" p-8 ">
+  <p class="text-6xl w-full text-center mb-8">Recent Posts</p>
+
+  <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-16 lg:gap-8 md:gap-4 gap-2">
+    <div class="border-2 border-colour-3">
+      <img src="./images/color.png" alt="color" class="hidden md:block md:mx-auto w-full">
+      <div class="p-4">
+        <p class="text-center uppercase text-md mb-2">photo</p>
+        <p class="text-center uppercase text-xl mb-2">Little Known Ways To Rid YourSelf</p>
+        <p class="text-center uppercase text-md mb-2">June 20,2021</p>
+        <hr class=" mx-12 xl:mx-24 py-0.5 bg-colour-3 mb-3">
+        <p class="xl:mx-12 text-center uppercase text-md mb-4">Special cloth alert. Fan luv. Celebrate success right, the only way, apple. Give thanks to the most high. In life there will be road blocks but we will over come...</p>        
+        <p class="text-center p-1 border-2 border-colour-3 w-fit mx-auto hover:bg-colour-3  hover:text-white hover:cursor-pointer ">Read More</p>
+      </div>
+
+    </div>
+
+
+    <div class="border-2 border-colour-3">
+      <div class="p-4">
+        <p class="text-center uppercase text-md mb-2">photo</p>
+        <p class="text-center uppercase text-xl mb-2">Little Known Ways To Rid YourSelf</p>
+        <p class="text-center uppercase text-md mb-2">June 20,2021</p>        
+      </div>
+      <img src="./images/color.png" alt="color" class="hidden md:block md:mx-auto w-full">
+      <div class="p-4">        
+        <p class="xl:mx-12 text-center uppercase text-md mb-4">Special cloth alert. Fan luv. Celebrate success right, the only way, apple. Give thanks to the most high. In life there will be road blocks but we will over come...</p>        
+        <p class="text-center p-1 border-2 border-colour-3 w-fit mx-auto hover:bg-colour-3  hover:text-white hover:cursor-pointer ">Read More</p>
+      </div>
+
+    </div>
+
+
+    <div class="border-2 border-colour-3">
+      
+      <div class="p-4">
+        <p class="text-center uppercase text-md mb-2">photo</p>
+        <p class="text-center uppercase text-xl mb-2">Little Known Ways To Rid YourSelf</p>
+        <p class="text-center uppercase text-md mb-2">June 20,2021</p>
+        <hr class=" mx-12 xl:mx-24 py-0.5 bg-colour-3 mb-3">
+        <p class="xl:mx-12 text-center uppercase text-md mb-4">Special cloth alert. Fan luv. Celebrate success right, the only way, apple. Give thanks to the most high. In life there will be road blocks but we will over come...</p>        
+        <p class="text-center p-1 border-2 border-colour-3 w-fit mx-auto hover:bg-colour-3  hover:text-white hover:cursor-pointer ">Read More</p>
+      </div>
+      <img src="./images/color.png" alt="color" class="hidden md:block md:mx-auto w-full">
+
+    </div>
+
+    <div class="border-2 border-colour-3">
+      <img src="./images/color.png" alt="color" class="hidden md:block md:mx-auto w-full">
+      <div class="p-4">
+        <p class="text-center uppercase text-md mb-2">photo</p>
+        <p class="text-center uppercase text-xl mb-2">Little Known Ways To Rid YourSelf</p>
+        <p class="text-center uppercase text-md mb-2">June 20,2021</p>
+        <hr class=" mx-12 xl:mx-24 py-0.5 bg-colour-3 mb-3">
+        <p class="xl:mx-12 text-center uppercase text-md mb-4">Special cloth alert. Fan luv. Celebrate success right, the only way, apple. Give thanks to the most high. In life there will be road blocks but we will over come...</p>        
+        <p class="text-center p-1 border-2 border-colour-3 w-fit mx-auto hover:bg-colour-3  hover:text-white hover:cursor-pointer ">Read More</p>
+      </div>
+
+    </div>
+
+
+    <div class="border-2 border-colour-3">
+      <div class="p-4">
+        <p class="text-center uppercase text-md mb-2">photo</p>
+        <p class="text-center uppercase text-xl mb-2">Little Known Ways To Rid YourSelf</p>
+        <p class="text-center uppercase text-md mb-2">June 20,2021</p>        
+      </div>
+      <img src="./images/color.png" alt="color" class="hidden md:block md:mx-auto w-full">
+      <div class="p-4">        
+        <p class="xl:mx-12 text-center uppercase text-md mb-4">Special cloth alert. Fan luv. Celebrate success right, the only way, apple. Give thanks to the most high. In life there will be road blocks but we will over come...</p>        
+        <p class="text-center p-1 border-2 border-colour-3 w-fit mx-auto hover:bg-colour-3  hover:text-white hover:cursor-pointer ">Read More</p>
+      </div>
+
+    </div>
+
+
+    <div class="border-2 border-colour-3">
+      
+      <div class="p-4">
+        <p class="text-center uppercase text-md mb-2">photo</p>
+        <p class="text-center uppercase text-xl mb-2">Little Known Ways To Rid YourSelf</p>
+        <p class="text-center uppercase text-md mb-2">June 20,2021</p>
+        <hr class=" mx-12 xl:mx-24 py-0.5 bg-colour-3 mb-3">
+        <p class="xl:mx-12 text-center uppercase text-md mb-4">Special cloth alert. Fan luv. Celebrate success right, the only way, apple. Give thanks to the most high. In life there will be road blocks but we will over come...</p>        
+        <p class="text-center p-1 border-2 border-colour-3 w-fit mx-auto hover:bg-colour-3  hover:text-white hover:cursor-pointer ">Read More</p>
+      </div>
+      <img src="./images/color.png" alt="color" class="hidden md:block md:mx-auto w-full">
+
+    </div>
+
+</div>
+</div>
+
+
+<!-- DIV-9  -->
+
+<div class="bg-colour-1 py-8">
+  <p class="text-6xl w-full text-center my-8">Recent Posts</p>
+
+  <form action="" class="mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <div>
+        <div class="flex justify-center">
+          <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+            <input
+              type="text"
+              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              id="exampleFormControlInput1"
+              placeholder="Example label" />
+            <label
+              for="exampleFormControlInput1"
+              class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+              >First Name
+            </label>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+            <input
+              type="text"
+              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              id="exampleFormControlInput1"
+              placeholder="Example label" />
+            <label
+              for="exampleFormControlInput1"
+              class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+              >Last Name
+            </label>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+            <input
+              type="email"
+              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              id="exampleFormControlInput1"
+              placeholder="Example label" />
+            <label
+              for="exampleFormControlInput1"
+              class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+              >E-mail
+            </label>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+            <textarea
+              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder="Your message"></textarea>
+            <label
+              for="exampleFormControlTextarea1"
+              class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+              >Comments</label
+            >
+          </div>
+        </div>
+
+        <div class="w-fit mx-auto hover:bg-colour-4 ">
+          <p class="p-1 border-2 uppercase text-colour-5 hover:text-white hover:cursor-pointer">
+            Submit
+          </p>
+        </div>
+
+
+        
+      </div>
+      <div class="flex justify-center flex-col md:flex-row ">
+        <span>Upload</span>
+        <div class="border border-dashed border-colour-5 mx-4 text-center py-20 md:w-fit lg:px-36 md:px-16">
+          <p>Drop your files here</p>
+          <p class="text-neutral-400">or</p>
+          <p class="p-1 mx-auto w-fit border border-colour-5">Browse File</p>
+        </div>
+      </div>
+    </div>
+
+
+  </form>
+</div>
+
+
+<!-- div-10  -->
+
+<div id="accordionExample" class="mx-8 m-8 md:mx-24 lg:mx-48 xl:mx-64">
+  <p class="text-4xl text-center">FAQ</p>
+  <div
+    class="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
+    <h2 class="mb-0" id="headingOne">
+      <button
+        class="group relative flex w-full items-center rounded-t-[15px] border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]"
+        type="button"
+        data-te-collapse-init
+        data-te-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne">
+        Lorem ipsum dolor sit amet
+        <span
+          class="ml-auto h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </span>
+      </button>
+    </h2>
+    <div
+      id="collapseOne"
+      class="!visible"
+      data-te-collapse-item
+      data-te-collapse-show
+      aria-labelledby="headingOne"
+      data-te-parent="#accordionExample">
+      <div class="py-4 px-5">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+    </div>
+  </div>
+  <div
+    class="border border-t-0 border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
+    <h2 class="mb-0" id="headingTwo">
+      <button
+        class="group relative flex w-full items-center rounded-none border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]"
+        type="button"
+        data-te-collapse-init
+        data-te-collapse-collapsed
+        data-te-target="#collapseTwo"
+        aria-expanded="false"
+        aria-controls="collapseTwo">
+        Lorem ipsum dolor sit amet
+        <span
+          class="ml-auto -mr-1 h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </span>
+      </button>
+    </h2>
+    <div
+      id="collapseTwo"
+      class="!visible hidden"
+      data-te-collapse-item
+      aria-labelledby="headingTwo"
+      data-te-parent="#accordionExample">
+      <div class="py-4 px-5">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+    </div>
+  </div>
+  <div
+    class="rounded-b-lg border border-t-0 border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
+    <h2 class="accordion-header mb-0" id="headingThree">
+      <button
+        class="group relative flex w-full items-center border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)] [&[data-te-collapse-collapsed]]:rounded-b-[15px] [&[data-te-collapse-collapsed]]:transition-none"
+        type="button"
+        data-te-collapse-init
+        data-te-collapse-collapsed
+        data-te-target="#collapseThree"
+        aria-expanded="false"
+        aria-controls="collapseThree">
+        Lorem ipsum dolor sit amet
+        <span
+          class="ml-auto -mr-1 h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </span>
+      </button>
+    </h2>
+    <div
+      id="collapseThree"
+      class="!visible hidden"
+      data-te-collapse-item
+      aria-labelledby="headingThree"
+      data-te-parent="#accordionExample">
+      <div class="py-4 px-5">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- DIV 11 -->
+
+<div class="flex justify-between mx-8">
+  <ul class=" flex justify-evenly">
+    <li class="px-1">© 2022 Haus Gitschberg |</li>
+    <li class="px-1"> Terms & Conditions</li>
+    <li class="px-1"> Privacy Policy</li>
+  </ul>
+  <ul class=" flex justify-evenly">
+    <li class="px-1"><em class="bi bi-facebook"></em></li>
+    <li class="px-1"><em class="bi bi-twitter"></em> </li>
+    <li class="px-1"><em class="bi bi-instagram"></em> </li>
+    <li class="px-1"><em class="bi bi-pinterest"></em> </li>
+    <li class="px-1"><em class="bi bi-youtube"></em> </li>
+  </ul>
+
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js" integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js" integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"></script>
+  <script src="./TW-ELEMENTS-PATH/dist/js/index.min.js" integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"></script>
+</body>
+
+</html>

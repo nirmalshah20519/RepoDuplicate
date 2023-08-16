@@ -1,0 +1,15 @@
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\bin\Debug\net6.0\Day5Assignment1.exe
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\bin\Debug\net6.0\Day5Assignment1.deps.json
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\bin\Debug\net6.0\Day5Assignment1.runtimeconfig.json
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\bin\Debug\net6.0\Day5Assignment1.dll
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\bin\Debug\net6.0\Day5Assignment1.pdb
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\obj\Debug\net6.0\Day5Assignment1.csproj.AssemblyReference.cache
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\obj\Debug\net6.0\Day5Assignment1.GeneratedMSBuildEditorConfig.editorconfig
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\obj\Debug\net6.0\Day5Assignment1.AssemblyInfoInputs.cache
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\obj\Debug\net6.0\Day5Assignment1.AssemblyInfo.cs
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\obj\Debug\net6.0\Day5Assignment1.csproj.CoreCompileInputs.cache
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\obj\Debug\net6.0\Day5Assignment1.dll
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\obj\Debug\net6.0\refint\Day5Assignment1.dll
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\obj\Debug\net6.0\Day5Assignment1.pdb
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\obj\Debug\net6.0\Day5Assignment1.genruntimeconfig.cache
+D:\RxTaskRepository\2717-Nirmal.S-Feb23Dotnet\DotnetCore\Day5\Assignments\Assignment1\Source\Day5Assignment1\Day5Assignment1\obj\Debug\net6.0\ref\Day5Assignment1.dll

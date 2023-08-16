@@ -1,0 +1,19 @@
+<div class=" container">
+<div class=" text-center">
+    <img [src]="user.profileUrl" alt="">
+</div>
+<div>
+    <p class=" text-primary h5">
+        Name :{{user.firstName+' '+user.middleName+' '+user.lastName}}
+    </p> 
+    <p class=" text-primary h5">
+        Email :{{user.email}}
+    </p> 
+    <p class=" text-primary h5">
+        Address :{{user.flatNo+' '+user.street+' '+user.city+' '+user.state+' '+user.pincode}}
+    </p>
+    <p class=" text-primary h5">
+        Init Date : {{user.initDate|date:'mediumDate'}}
+    </p>    
+</div>
+</div>

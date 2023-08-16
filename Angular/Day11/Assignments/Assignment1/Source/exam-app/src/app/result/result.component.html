@@ -1,0 +1,44 @@
+<div class="main-cont">
+    <p class="text-center display-1 mb-5">
+        Result :
+        <span *ngIf="perc>35" class="text-success">
+            Pass
+        </span>
+        <span *ngIf="perc<=35" class="text-danger">
+            Fail
+        </span>
+    </p>
+    <div class="table-responsive container">
+        <table class="table table-bordered">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Out of</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Attempted</td>
+                    <td>{{Resp}}</td>
+                    <td>{{TotalQue}}</td>
+                </tr>
+                <tr>
+                    <td>Correct</td>
+                    <td>{{Correct}}</td>
+                    <td>{{TotalQue}}</td>
+                </tr>
+                <tr>
+                    <td>Result</td>
+                    <td *ngIf="perc<=35" class="text-danger" colspan="2">{{perc|number:'2.0-2'}} %</td>
+                    <td *ngIf="perc>35" class="text-success" colspan="2">{{perc|number:'2.0-2'}} %</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<div class="w-100 text-center">
+    <button class="my-btn " (click)="navigateToHome()" role="button">Back to Home</button>
+</div>
+    
+</div>

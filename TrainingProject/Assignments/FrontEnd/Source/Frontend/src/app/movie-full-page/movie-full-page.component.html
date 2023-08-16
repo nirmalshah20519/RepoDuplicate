@@ -1,0 +1,178 @@
+<div [style.backgroundImage]="'url(' + currMov.posterLink + ')'" class=" bg-no-repeat bg-cover" >
+<div class=" h-full w-full bg-black bg-opacity-70 grid grid-cols-3  py-16 md:py-0">
+    <div class=" flex p-4 mx-8 col-span-2">
+        <div class=" hidden md:block relative">
+            <img class="w-64" [src]="currMov.posterLink" alt="">
+            <button class="bg-neutral-900 bg-opacity-70 text-white px-4 py-2 rounded absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            data-te-toggle="modal"
+            data-te-target="#exampleModalXl">
+                Trailer
+            </button>
+        </div>
+        <div class=" md:p-4 md:mx-4">
+            <p class=" text-6xl text-white font-bold mb-4">
+                {{currMov.name}}
+            </p>
+            <p class=" text-2xl text-white font-semibold mb-4">
+                <img style="width: 20px;" class=" inline -mt-2" src="https://cdn-icons-png.flaticon.com/512/9796/9796698.png" alt="">
+                {{currMov.imdbRating|number:"1.1-1"}} / 10
+            </p>
+            <ng-container *ngFor="let lang of currMov.detail">
+                <span *ngIf="lang.typeId===2" class=" bg-slate-200 px-2 p-1 text-lg rounded-md me-2">
+                    {{lang.typeName}}
+                </span>
+            </ng-container>
+            <p class=" text-mg text-white mt-4 mb-6">
+                <span>
+                    {{currMov.duration}} &centerdot;
+                    <ng-container *ngFor="let lang of currMov.detail">
+                        <span *ngIf="lang.typeId===1" class="text-lg">
+                            {{lang.typeName}},
+                        </span>
+                    </ng-container>&centerdot;
+                    {{currMov.releaseDate|date:'mediumDate'}}
+                </span>
+            </p>
+            <button
+            role="button"
+            data-te-ripple-init
+            data-te-ripple-color="light"
+            class="inline-block rounded bg-red-500 px-6 py-2 text-lg font-medium leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-500 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)]">
+            Book Tickets
+        </button>
+        </div>
+    </div>
+    <div></div>
+</div>
+</div>
+
+<div class=" container p-4 px-16">
+    <p class=" text-3xl font-semibold mb-2">
+        About the movie
+    </p>
+    <p class=" mb-12 text-justify">
+        {{currMov.description}}
+    </p>
+    <hr>
+    <p class=" mt-4 text-3xl font-semibold mb-2">
+        Cast
+    </p>
+    <div class=" flex gap-8 mb-6">
+        <ng-container *ngFor="let cast of currMov.cast">
+            <div *ngIf="cast.roleId===1">
+                <img  class=" rounded-full w-24 h-24 mx-auto" [src]="cast.castProfile" alt="">
+                <p class=" text-center mt-2 font-bold">
+                    {{cast.castName}}
+                </p>
+                <p class=" text-center text-sm">
+                    {{cast.roleName}}
+                </p>
+            </div>
+        </ng-container>
+
+    </div>
+    <hr>
+    <p class=" mt-4 text-3xl font-semibold mb-2">
+        Crew
+    </p>
+    <div class=" flex gap-4">
+        <ng-container *ngFor="let cast of currMov.cast">
+            <div *ngIf="cast.roleId!==1">
+                <img  class=" rounded-full w-24 h-24 mx-auto" [src]="cast.castProfile" alt="">
+                <p class=" text-center mt-2 font-bold w-full">
+                    {{cast.castName}}
+                </p>
+                <p class=" text-center text-sm">
+                    {{cast.roleName}}
+                </p>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+
+
+<div
+  data-te-modal-init
+  data-te-backdrop="static"
+  data-te-keyboard="false"
+  class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+  id="exampleModalXl"
+  tabindex="-1"
+  aria-labelledby="exampleModalXlLabel"
+  aria-modal="true"
+  role="dialog">
+  <div
+    data-te-modal-dialog-ref
+    class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[992px]:max-w-[800px] min-[1200px]:max-w-[1140px]">
+    <div
+      class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
+      <div
+        class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 ">
+        <!--Modal title-->
+        <h5
+          class="text-xl font-medium leading-normal text-neutral-800 "
+          id="exampleModalXlLabel">
+          Videos for 
+          <span class=" text-red-500">
+              {{currMov.name}}
+            </span>
+        </h5>
+        <!--Close button-->
+        <button
+          type="button"
+          class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+          data-te-modal-dismiss
+          aria-label="Close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!--Modal body-->
+      <div class="relative p-4">
+        <!-- {{currMov.trailerLink}} -->
+        <div class="video-container" (mouseenter)="showControls()" (mouseleave)="hideControls()">
+
+        
+        <video #videoPlayer controls [src]="currMov.trailerLink" class="w-full h-96" [poster]="currMov.posterLink">
+          </video>
+          <div class="text-neutral-100 absolute start-1/2 -translate-x-1/2 bottom-1/2 -translate-y-1/2">
+            <div class=" flex items-center gap-4 " [ngClass]="{'hidden':!controlsVisible}" >
+
+                <button class=" text-4xl relative" (click)="skipBackward()">
+                    <em class="bi bi-arrow-counterclockwise"></em>
+                    <span class=" absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 text-sm">
+                        10
+                    </span>
+                </button>
+                
+                <button class="text-5xl"  (click)="togglePlayPause()">
+                    <ng-container *ngIf="isPlaying; else playIcon"><em class="bi bi-pause-fill "></em></ng-container>
+                    <ng-template #playIcon><em class="bi bi-play-fill"></em></ng-template>
+                </button>            
+                
+                <button class=" text-4xl relative" (click)="skipForward()">
+                    <em class="bi bi-arrow-clockwise"></em>
+                    <span class=" absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 text-sm">
+                        10
+                    </span>
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

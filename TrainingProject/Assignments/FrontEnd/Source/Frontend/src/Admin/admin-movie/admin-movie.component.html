@@ -1,0 +1,252 @@
+
+<p *ngIf="green" class=" bg-green-300 p-4 text-black-800 mt-2">
+  {{message}}
+</p>
+<div class=" flex flex-col md:flex-row justify-center md:justify-around ">
+
+  <div class=" p-4">
+    <p class="text-2xl text-center mt-2 bg-purple-400 p-2">
+      Add Movie Detail
+    </p>
+
+    <div class="flex justify-center py-12">
+  
+      <form [formGroup]="MovieEntry" class="w-full max-w-lg">
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
+                Movie Name
+              </label>
+              <input formControlName="MovieName" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="text" placeholder="Enter Movie Name">
+              <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                Release Date
+              </label>
+              <input formControlName="ReleaseDate" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="date" placeholder="Doe">
+            </div>
+          </div>
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                Description
+              </label>
+              <textarea rows="6" formControlName="Description" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="Enter the description">
+                </textarea>
+              <!-- <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p> -->
+            </div>
+          </div>
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+                Duration (Hour)
+              </label>
+              <input formControlName="DurationHr" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number" placeholder="Hours">
+            </div>
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+                Duration (Min)
+              </label>
+              <input formControlName="DurationMin" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number" placeholder="Minutes">
+            </div>
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                IMDB
+              </label>
+              <input formControlName="IMDB" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="IMDB Rating">
+            </div>
+          </div>
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
+                Poster
+              </label>
+              <input (change)="onPosterSelected($event)" formControlName="Poster" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="file" placeholder="Enter Movie Name">
+              <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                Trailer
+              </label>
+              <input (change)="onTrailerSelected($event)" formControlName="Trailer" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="file" placeholder="Doe">
+            </div>
+          </div>
+        </form>
+
+  
+        
+  </div>
+  </div>
+  <div class=" p-4">
+    <p class="text-2xl text-center mt-2 bg-purple-400 p-2">
+      Add Genre and Language Detail
+    </p>
+    <div class="py-6">
+      <div class=" mb-2 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
+          Movie Genre
+        </label>
+        <div class=" flex gap-4">
+          <div class="flex-grow relative">
+            <select [(ngModel)]="Gen" class="block appearance-none w-full bg-gray-200 border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+              <option disabled selected>Select Genre</option>
+              <ng-container *ngFor="let g of allGen">
+                <option [value]="g.id">{{g.typeName}}</option>
+              </ng-container>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          
+          </div>
+          <button (click)="addGenre()" class=" block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Add
+          </button>
+        </div>
+
+      </div>        
+    </div>
+    <div class=" p-2">
+      <div class=" flex">
+        <ng-container *ngFor="let item of tempGen">
+          <div>
+            <span class=" bg-red-200 p-2 rounded-md me-2">
+              {{getGbyID(item).typeName}}
+              <img (click)="removeG(item)" src="https://cdn-icons-png.flaticon.com/512/2997/2997911.png" class=" inline hover:scale-110" alt="cross" width="8px">
+            </span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="py-6">
+      <div class=" mb-2 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
+          Movie Language
+        </label>
+        <div class=" flex gap-4">
+          <div class="flex-grow relative">
+            <select [(ngModel)]="Lang" class="block appearance-none w-full bg-gray-200 border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+              <option disabled selected>Select Language</option>
+              <ng-container *ngFor="let l of allLang">
+                <option [value]="l.id">{{l.typeName}}</option>
+              </ng-container>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          
+          </div>
+          <button (click)="addLang()" class=" block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Add
+          </button>
+        </div>
+
+      </div>        
+    </div>
+    <div class=" p-2">
+      <div class=" flex">
+        <ng-container *ngFor="let item of tempLang">
+          <div>
+            <span class=" bg-red-200 p-2 rounded-md me-2">
+              {{getLbyID(item).typeName}}
+              <img (click)="removeL(item)" src="https://cdn-icons-png.flaticon.com/512/2997/2997911.png" class=" inline hover:scale-110" alt="cross" width="8px">
+            </span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class=" p-4">
+    <p class="text-2xl text-center mt-2 bg-purple-400 p-2">
+      Add Cast Detail
+    </p>
+    <div class="py-6">
+      <div class=" mb-2 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
+          Cast Name
+        </label>
+        <div class=" flex gap-4">
+          <div class="flex-grow relative">
+            <select [(ngModel)]="castName" class="block appearance-none w-full bg-gray-200 border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+              <option disabled selected>Select Cast</option>
+              <ng-container *ngFor="let g of castNames">
+                <option [value]="g.id">{{g.name}}</option>
+              </ng-container>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          
+          </div>
+          
+        </div>
+
+      </div>        
+    </div>
+    
+    <div class="py-6">
+      <div class=" mb-2 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
+          Cast Role
+        </label>
+        <div class=" flex gap-4">
+          <div class="flex-grow relative">
+            <select [(ngModel)]="roleName" class="block appearance-none w-full bg-gray-200 border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+              <option disabled selected>Select Role</option>
+              <ng-container *ngFor="let l of roleNames">
+                <option [value]="l.id">{{l.name}}</option>
+              </ng-container>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          
+          </div>
+        </div>
+        
+        <button (click)="addCast()" class=" block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+          Add
+        </button>
+      </div>        
+    </div>
+
+    <div class=" p-2">
+        <div class=" grid grid-cols-1">
+          <ng-container *ngFor="let item of addedRoles">
+            <div class=" mb-6">
+              <span class=" bg-red-200 p-2 rounded-md me-2">
+                {{getCbyID(item.cid).name}}
+                ({{getRbyID(item.rid).name}})
+                <img (click)="removeAR(item.cid, item.rid)" src="https://cdn-icons-png.flaticon.com/512/2997/2997911.png" class=" inline hover:scale-110" alt="cross" width="8px">
+              </span>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    
+  </div>
+
+
+
+</div>
+<div class=" flex justify-end px-24">
+    <button (click)="onSubmit()" class=" block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+        Submit
+      </button>
+</div>
+
+<p>
+  {{MovieEntry.value|json}}
+</p>
+
+
+<div *ngIf="loadFlag" class=" absolute top-0 w-screen h-screen bg-slate-500 opacity-50">
+  <div class="absolute top-1/2 left-1/2">
+    <div class=" rounded-full bg-orange-900 w-10 h-10 animate-pulse animate-ping  opacity-100 ">
+  
+    </div>
+    <p class="mt-4 -ml-2 opacity-100">Loading...</p>
+  </div>
+ 
+</div>

@@ -1,0 +1,4 @@
+<ng-container *ngIf="currTaskData else elseBlk">
+    <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(currTaskData.URL)" [title]="currTaskData.Name" style="width: 100%; height: 100%;"></iframe>
+</ng-container>
+<ng-template #elseBlk> <p class="display-1 fw-bold text-center">Data not found</p></ng-template>

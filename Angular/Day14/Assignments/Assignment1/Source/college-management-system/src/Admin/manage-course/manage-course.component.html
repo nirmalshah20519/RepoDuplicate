@@ -1,0 +1,138 @@
+<div id="noscroll" class="container p-2 h-75 overflow-auto">
+    <div class="d-flex justify-content-between">
+        <a routerLink="../" (click)="setCurrSub(undefined)" class="btn btn-sm btn-dark">Back</a>
+        <a (click)="DeleteCourse()" class="btn btn-sm btn-danger">Delete Course</a>
+    </div>
+    <p class="text-center display-4">
+        Manage {{CurrSub}}
+    </p>
+
+    <div class="container-fluid mb-3">
+        <p class="text-dark">Course ID : <span class="fw-bold text-primary">{{currCourse?.CID}}</span></p>
+        <p class="text-dark d-flex justify-content-between"> 
+            <span>Course Name : 
+                <span *ngIf="!NameEditMode" class="fw-bold text-primary">{{currCourse?.Name}}</span> 
+                <span *ngIf="NameEditMode" class="fw-bold text-primary"><input [(ngModel)]="NameInput" type="text" class="form-control-sm" placeholder="Edit Course Title"></span> 
+            </span> 
+            <span >
+                <span *ngIf="!NameEditMode" class="btn btn-sm btn-outline-primary" (click)="handleNameEdit(currCourse?.Name)">
+                    Edit
+                </span>
+                <span *ngIf="NameEditMode">
+                    <span  class="btn btn-sm btn-outline-danger me-3" (click)="handleNameCancel()">
+                        Cancel
+                    </span>
+                    <span  class="btn btn-sm btn-outline-success" (click)="handleNameEditSave(currCourse?.CID)">
+                        Update
+                    </span>
+                </span>
+            </span> 
+        </p>
+        <p class="text-dark d-flex justify-content-between"> 
+            <span>Course Description : 
+                <span *ngIf="!DescEditMode" class="fw-bold text-primary">{{currCourse?.Description}}</span>
+                <span *ngIf="DescEditMode" class="fw-bold text-primary"><input [(ngModel)]="DescInput" type="text" class="form-control-sm " placeholder="Edit Course Description"></span>                
+            </span> 
+            <span >
+                <span *ngIf="!DescEditMode" class="btn btn-sm btn-outline-primary" (click)="handleDescEdit(currCourse?.Description)">
+                    Edit
+                </span>
+                <span *ngIf="DescEditMode">
+                    <span  class="btn btn-sm btn-outline-danger me-3" (click)="handleDescCancel()">
+                        Cancel
+                    </span>
+                    <span  class="btn btn-sm btn-outline-success" (click)="handleDescEditSave(currCourse?.CID)">
+                        Update
+                    </span>
+                </span>
+            </span> 
+        </p>
+    </div>
+    <div class="row row-cols-2 overflow-auto">
+        <div id="noscroll" class="container-fluid overflow-scroll" style="height: 16rem;">
+            <table class="table table-bordered table-hover w-100 mx-auto">
+                <caption></caption>
+                <thead class="table-primary">
+                    <tr>
+                        <th>Faculty Assigned</th>
+                    </tr>                
+                </thead>
+                <tbody class="table-success">
+                    <ng-container *ngIf="AssignedFaculty.length===0 else facList">
+                        <tr class="table-danger">
+                            <td>No Faculty Assigned</td>
+                        </tr>
+                    </ng-container>
+                    <ng-template #facList>
+                        <ng-container *ngFor="let f of AssignedFaculty">
+                            <tr>
+                                <td>{{f.Name}}</td>
+                            </tr>
+                        </ng-container>
+                    </ng-template>
+                    
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>                        
+                                <div class="d-flex gap-2">
+                                    <select [(ngModel)]="currFaculty" class="form-select form-select-sm" name="" id="">
+                                        <option selected disabled>Select one</option>
+                                        <ng-container *ngFor="let f of AvailableFaculty">
+                                            <option [value]="f.FID">{{f.Name}}</option>
+                                        </ng-container>
+                                    </select>
+                                    <button class="btn btn-sm btn-dark" [disabled]="currFaculty===undefined" (click)="AddFac()">Add</button>
+                                </div>
+                                
+                            
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+    
+        </div>
+        <div id="noscroll" class="container-fluid overflow-auto" style="height:16rem">
+            <table class="table table-bordered table-hover w-100 mx-auto">
+                <caption></caption>
+                <thead class="table-primary">
+                    <tr>
+                        <th>Students Enrolled</th>
+                    </tr>                
+                </thead>
+                <tbody class="table-success">
+                    <ng-container *ngIf="getEnrolledStudents().length===0 else StuList">
+                        <tr class="table-danger">
+                            <td>No Student Enrolled</td>
+                        </tr>
+                    </ng-container>
+                    <ng-template #StuList>
+                        <ng-container *ngFor="let s of getEnrolledStudents()">
+                            <tr>
+                                <td>{{s.Name}}</td>
+                            </tr>
+                        </ng-container>
+                    </ng-template>
+                    
+                </tbody>
+                <tfoot>
+                    <ng-container *ngFor="let S of getUnenrolledStudents()">
+                    <tr>
+                        <td>
+                            <div class="d-flex justify-content-between gap-2">
+                                <p>{{S.Name}}</p>
+                                <button class="btn btn-sm btn-dark" (click)="AddStu(S)">Add</button>
+                            </div>
+
+                        </td>
+                    </tr>
+                </ng-container>
+                </tfoot>
+            </table>
+    
+        </div>
+
+    </div>
+    
+    
+</div>

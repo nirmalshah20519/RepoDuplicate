@@ -1,0 +1,21 @@
+<div class="container p-5 bg-success">
+    <p class="display-1 fw-bold text-light">Area of Rectangle</p>
+    <div class="mb-3">
+      <label for="" class="form-label text-light">Enter Length</label>
+      <input type="number"
+        class="form-control" name="" id="" aria-describedby="helpId" placeholder="Length" [(ngModel)]="length">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label text-light">Enter Breadth</label>
+        <input type="number"
+          class="form-control" name="" id="" aria-describedby="helpId" placeholder="Breadth" [(ngModel)]="breadth">
+      </div>
+      <input name="" id="" class="btn btn-light" type="button" value="Calculate Area" (click)="calcArea()">
+
+      <div class="d-block w-100 bg-dark mt-3 p-3">
+        
+        <p class="display-2 text-light text-center"> Area of Rectangle: <span class="fw-bold text-primary">{{result}}</span>  sq. units</p>
+
+      </div>
+</div>

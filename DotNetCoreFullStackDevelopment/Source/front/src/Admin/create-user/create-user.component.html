@@ -1,0 +1,131 @@
+<div>
+    <p class=" bg-success display-4 fw-semibold text-light p-2">
+        New Devotee Registration
+    </p>
+    <span *ngIf="showFlag" class=" d-inline-block bg-success h4 p-3 text-light opacity-75">
+        {{msg}}
+    </span>
+        <form [formGroup]="register">
+            <div class="d-flex">
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">First Name</label>
+                        <input type="text" formControlName="FirstName" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('FirstName')?.dirty||register.get('FirstName')?.touched) && register.get('FirstName')?.errors?.['required']"
+                         class="text-danger">firstname is required</small>
+                    </div>
+                </div>
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Middle Name</label>
+                        <input type="text" formControlName="MiddleName" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('MiddleName')?.dirty||register.get('MiddleName')?.touched) && register.get('MiddleName')?.errors?.['required']"
+                        class="text-danger">middlename is required</small>
+                    </div>
+                </div>
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Last Name</label>
+                        <input type="text" formControlName="LastName" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('LastName')?.dirty||register.get('LastName')?.touched) && register.get('LastName')?.errors?.['required']"
+                        class="text-danger">lastname is required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="text" formControlName="Email" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('Email')?.dirty||register.get('Email')?.touched) && register.get('Email')?.errors?.['required']"                        
+                        class="text-danger">Email is required</small>
+                        <small 
+                        *ngIf="(register.get('Email')?.dirty||register.get('Email')?.touched) && register.get('Email')?.errors?.['email']"                        
+                        class="text-danger">Invalid Email</small>
+                    </div>
+                </div>
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Profile Picture</label>
+                        <input type="file" (change)="onselected($event)" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('Image')?.dirty||register.get('Image')?.touched) && register.get('Image')?.errors?.['required']"                        
+                        class="text-danger">Profile picture is required</small>
+                    </div>
+                </div>
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Init Date</label>
+                        <input [min]="minDate" type="date" formControlName="InitDate"  class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('InitDate')?.dirty||register.get('InitDate')?.touched) && register.get('InitDate')?.errors?.['required']"                        
+                        class="text-danger">Init date is required</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Flat No</label>
+                        <input type="text" formControlName="FlatNo" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('FlatNo')?.dirty||register.get('FlatNo')?.touched) && register.get('FlatNo')?.errors?.['required']"                        
+                        class="text-danger">FlatNo is required</small>
+                    </div>
+                </div>
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Street</label>
+                        <input type="text" formControlName="Street" (change)="($event)" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('Street')?.dirty||register.get('Street')?.touched) && register.get('Street')?.errors?.['required']"                        
+                        class="text-danger">Street is required</small>
+                    </div>
+                </div>
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">City</label>
+                        <input type="text" formControlName="City" (change)="($event)" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('City')?.dirty||register.get('City')?.touched) && register.get('City')?.errors?.['required']"                        
+                        class="text-danger">City is required</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">State</label>
+                        <input type="text" formControlName="State" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('State')?.dirty||register.get('State')?.touched) && register.get('State')?.errors?.['required']"                        
+                        class="text-danger">State is required</small>
+                    </div>
+                </div>
+                <div class="col me-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Pincode</label>
+                        <input type="text" formControlName="Pincode" (change)="($event)" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small 
+                        *ngIf="(register.get('Pincode')?.dirty||register.get('Pincode')?.touched) && register.get('Pincode')?.errors?.['required']"                        
+                        class="text-danger">Pincode is required</small>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="!createEditFlag" class=" d-flex justify-content-end">
+                <button type="button" (click)="onSubmit()" [disabled]="register.invalid" class="btn btn-primary">Add User</button>
+            </div>
+
+            <div *ngIf="createEditFlag" class=" d-flex justify-content-end">
+                <button type="button" (click)="onUpdate()" [disabled]="register.invalid" class="btn btn-warning">Update User</button>
+            </div>
+            
+        </form>
+</div>

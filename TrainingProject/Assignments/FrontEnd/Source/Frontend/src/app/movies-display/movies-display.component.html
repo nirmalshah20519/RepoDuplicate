@@ -1,0 +1,25 @@
+<div class=" mx-auto w-fit">
+    <ng-container  *ngIf="allMovies.length;else noMovies">
+        <div class=" container p-4">
+            <p class=" text-xl font-semibold">
+                Recommended Movies
+            </p>
+            <div class=" w-max mx-0 lg:mx-0 md:w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 p-2 ">
+                <ng-container *ngFor="let movie of allMovies">
+                    <app-movie-card [movie]="movie"></app-movie-card>
+                </ng-container>
+            </div>
+        </div>
+        
+    
+    </ng-container>
+    
+    <ng-template #noMovies>
+        <div>
+            <p class=" text-xl font-semibold text-center p-4">
+                No Movies in Your Area Currently
+            </p>
+        </div>
+    </ng-template>
+</div>
+

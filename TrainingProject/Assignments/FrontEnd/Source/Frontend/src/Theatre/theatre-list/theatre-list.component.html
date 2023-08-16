@@ -1,0 +1,43 @@
+
+
+<div class="flex flex-wrap mt-4">
+    <div class="w-full md:w-1/2 lg:w-1/4 p-2 md:px-4" *ngFor="let t of Theatres">
+        <div
+        class="block rounded-lg bg-white text-center shadow-xl hover:shadow-2xl hover:scale-105 border-red-200 border-4 min-h-full">
+
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
+            {{t.name}} : {{t.street}}
+          </h5>
+          <p class="mb-4 text-base text-neutral-600">
+            <em class="bi bi-geo-alt-fill"></em>
+            
+            {{t.city}},
+            {{t.state}},
+            {{t.country}}
+          </p>
+          <!-- <p class=" text-start p-4">
+            <ng-container *ngFor="let f of t.facilities">
+                <img [src]="f.url" alt="" class=" w-8 h-8 inline me-4">
+                
+            </ng-container>
+          </p> -->
+          <button
+            type="button"
+            class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+            data-te-ripple-init
+            [routerLink]="[t.id]"
+            data-te-ripple-color="light"
+            >
+            Manage
+          </button>
+        </div>
+        <!-- <div
+          class="border-t-2 border-neutral-100 px-6 py-3 ">
+          2 days ago
+        </div> -->
+      </div>
+    </div>
+  </div>
+  

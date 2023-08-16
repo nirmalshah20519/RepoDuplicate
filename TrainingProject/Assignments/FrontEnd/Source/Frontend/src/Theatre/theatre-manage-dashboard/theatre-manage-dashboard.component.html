@@ -1,0 +1,29 @@
+<!-- app.component.html -->
+
+<div class="flex h-full">
+    <!-- Left Sidebar -->
+    <div class="bg-gray-800 text-white w-1/4 h-full">
+      <!-- Sidebar Content -->
+      <ul class="py-4">
+        <li class="px-6 py-3">
+          <a routerLink="./manage-screen" routerLinkActive="text-red-500 bg-white " class="flex items-center p-2 rounded-xl text-gray-300 hover:scale-105 hover:cursor-pointer text-xl">
+            Manage Screens
+          </a>
+        </li>
+        <li class="px-6 py-3">
+          <a routerLink="./manage-show" routerLinkActive="text-red-500 bg-white " class="flex items-center p-2 rounded-xl text-gray-300 hover:scale-105 hover:cursor-pointer text-xl">
+            Manage Shows
+          </a>
+        </li>
+        <!-- Add more sidebar items here -->
+      </ul>
+    </div>
+  
+    <!-- Main Content Area -->
+    <div class="w-3/4">
+      <!-- Main Content -->
+      
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

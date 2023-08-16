@@ -1,0 +1,22 @@
+<div class="container bg-primary p-5">
+    <div class="d-flex">
+        <input class="form-control me-2" type="number" placeholder="Enter Num 1" [(ngModel)]="num1">
+        <input class="form-control me-2" type="number" placeholder="Enter Num 2" [(ngModel)]="num2">
+      </div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="calc" [checked]="opr===1" (change)="onChange(1)" value="add">
+    <label class="form-check-label text-light" for="">Add</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="calc" [checked]="opr===2" (change)="onChange(2)" value="sub">
+    <label class="form-check-label text-light" for="">Subtract</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="calc" [checked]="opr===3" (change)="onChange(3)" value="mul">
+    <label class="form-check-label text-light" for="">Multiply</label>
+  </div>
+
+  <input name="" id="" class="btn btn-primary" type="button" value="Calculate" (click)="calculate()">
+      <p class="text-light mt-2 p-2 display-6">result: {{result}}</p>
+    
+</div>

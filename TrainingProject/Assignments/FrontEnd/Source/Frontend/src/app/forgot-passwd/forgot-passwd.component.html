@@ -1,0 +1,106 @@
+<div class=" w-1/5 p-4 mx-auto">
+    <p class=" text-2xl font-semibold text-slate-700 mb-8">Reset Your Password</p>
+    <form [formGroup]="resetForm" [ngClass]="{hidden:resetFlag}">
+        <!-- Email input -->
+        <div class="mb-6">    
+          <div class="relative mb-1 " data-te-input-wrapper-init>
+            <input
+            formControlName="Email"
+            type="email"
+            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            placeholder="Email address" />
+          <label
+          class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none "
+          >Email address
+        </label>
+      </div>
+      <div *ngIf="resetForm.get('Email')?.invalid && (resetForm.get('Email')?.dirty || resetForm.get('Email')?.touched)"
+        class="text-red-500 text-xs mt-1">Invalid email address</div>
+    </div>
+        <button
+          [ngClass]="{' opacity-50 pointer-events-none': resetForm.invalid}"
+          [disabled]="resetForm.invalid"
+          (click)="onGetOtp()"
+          class="inline-block w-full rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+          data-te-ripple-init
+          data-te-ripple-color="light">
+          Get OTP
+        </button>
+      </form>
+      <form [formGroup]="otpForm" [ngClass]="{hidden:!resetFlag}">
+        <div *ngIf="red" class="p-2 mb-4 bg-red-200 text-opacity-60">
+          {{msg}}
+        </div>
+        <div *ngIf="green" class="p-2 mb-4 bg-green-200 text-opacity-60">
+          {{msg}}
+        </div>
+          <div class=" mb-6">
+        
+              <div class="relative mb-1" data-te-input-wrapper-init>
+                <input
+                  type="password"
+                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                  formControlName="NewPassword"
+                  placeholder="Password" />
+                <label
+                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+                  >New Password
+                </label>
+              </div>
+              <div *ngIf="otpForm.controls['NewPassword'].invalid && (otpForm.controls['NewPassword'].dirty || otpForm.controls['NewPassword'].touched)">
+                <div *ngIf="otpForm.controls['NewPassword'].hasError('required')" class=" text-red-500">New Password is required.</div>
+                <div *ngIf="otpForm.controls['NewPassword'].hasError('minlength')" class=" text-red-500">New Password must be at least 8 characters long.</div>
+                <div *ngIf="otpForm.controls['NewPassword'].hasError('pattern') && !otpForm.controls['NewPassword'].hasError('minlength')" class=" text-red-500">New Password must include at least 1 uppercase letter, 1 digit, and 1 special character.</div>
+              </div>
+            </div>
+
+            <div class=" mb-6">
+        
+                <div class="relative mb-1" data-te-input-wrapper-init>
+                  <input
+                    type="password"
+                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 disabled:opacity-50 disabled:bg-slate-400"
+                    formControlName="ConfirmNewPassword"
+                    placeholder="Password" />
+                  <label
+                    class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+                    >Confirm New Password
+                  </label>
+                </div>
+                <div *ngIf="((otpForm.controls['NewPassword'].valid && otpForm.controls['ConfirmNewPassword'].dirty) || otpForm.controls['ConfirmNewPassword'].touched) && !otpForm.controls['ConfirmNewPassword'].disabled">
+                    <div *ngIf="otpForm.controls['ConfirmNewPassword'].hasError('required')" class=" text-red-500">Confirm New Password is required.</div>
+                    <div *ngIf="!passwdFlag" class=" text-red-500">Passwords do not match</div>
+                </div>
+              </div>
+
+              <div class=" mb-6">
+        
+                <div class="relative mb-1" data-te-input-wrapper-init>
+                  <input
+                    type="text"
+                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                    formControlName="OTP"
+                    placeholder="Password" />
+                  <label
+                    class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+                    >OTP
+                  </label>
+                </div>
+                <div *ngIf="otpForm.controls['OTP'].invalid && (otpForm.controls['OTP'].dirty || otpForm.controls['OTP'].touched)">
+                    <div *ngIf="otpForm.controls['OTP'].hasError('required')" class="text-red-500">OTP is required.</div>
+                    <div *ngIf="otpForm.controls['OTP'].hasError('pattern')" class="text-red-500">OTP must be a 6-digit numeric code.</div>
+                  </div>
+              </div>
+
+              <button
+          [ngClass]="{' opacity-50 pointer-events-none': otpForm.invalid}"
+          [disabled]="(otpForm.invalid && !passwdFlag)"
+          (click)="onReset()"
+          class="inline-block w-full rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+          data-te-ripple-init
+          data-te-ripple-color="light">
+          Reset Password
+        </button>
+      </form>
+</div>
+

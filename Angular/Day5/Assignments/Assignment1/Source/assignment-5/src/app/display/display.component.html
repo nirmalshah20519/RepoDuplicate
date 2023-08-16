@@ -1,0 +1,26 @@
+<div class="container">
+    <ng-container *ngIf="arr.length;else noData">
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <caption></caption>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let item of arr">
+                    <tr (click)="detail(item.ID)">
+                        <td>{{item.ID}}</td>
+                        <td>{{item.Name.fname +" "+ item.Name.lname}}</td>
+                    </tr>            
+                </tbody>
+            </table>
+        </div>
+    </ng-container>
+    <ng-template #noData>
+        <p class="display-1 fw-bold text-danger text-center">No Data Found</p>
+    </ng-template>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,30 @@
+<div class="max-w-sm overflow-hidden cursor-pointer" [routerLink]="['movie',movie.name,movie.id]">
+    <div class=" relative">
+        <img class=" h-96 inline me-1 w-full" [src]="movie.posterLink" alt="">
+        <p class=" w-full p-1 absolute bottom-0 bg-black opacity-80 text-white text-opacity-100">
+            <img style="width: 16px;" class=" inline" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="">
+            {{movie.imdbRating|number:"1.1-1" }} / 10
+          </p>
+    </div>
+    <div class="h-32">
+      <div class=" mt-2 flex justify-between">
+        <p class=" text-black bold text-2xl font-serif">
+            {{movie.name}}
+          </p>
+          <p>
+            <img style="width: 16px;" class=" inline" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="">
+            {{movie.imdbRating|number:"1.1-1"}}
+          </p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-black-300 opacity-60">
+          <ng-container *ngFor="let det of movie.detail">
+            <span *ngIf="det.typeId===1">{{det.typeName}} / </span>
+          </ng-container>
+
+        </p>
+      </div>
+    </div>
+    <div class="px-6 pt-4 pb-2">
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+<div class="container bg-primary">
+  <p class="fw-bold h2 p-2 text-light">Text Editor</p>
+
+  <div class="container-fluid p-3">
+    <button type="button" [class]="BoldBtnClass" (click)="handleBoldBtn()">
+      B
+    </button>
+    <button type="button" [class]="ItalicBtnClass" (click)="handleItalicBtn()">
+      I
+    </button>
+    <div class="mb-3">
+      <label for="" class="form-label"></label>
+      <textarea [class]="TAclass" name="" id="" rows="6"></textarea>
+    </div>
+  </div>
+</div>

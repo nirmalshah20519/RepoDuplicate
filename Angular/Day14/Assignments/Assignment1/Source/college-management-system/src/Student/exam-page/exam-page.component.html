@@ -1,0 +1,32 @@
+<div class="container p-2">
+    <table class="table table-striped" *ngIf="ExamData.length!==0 else noData">
+        <caption></caption>
+        <thead>
+            <tr>
+                <th class="text-primary fw-semibold text-center">Exam</th>
+                <th class="text-primary fw-semibold text-center">Score</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let data of ExamData">
+            <tr>
+                <td>
+                    Lecture on <span class="text-primary fw-semibold"> {{data.Topic}} </span>
+                    on <span class="text-primary fw-semibold"> {{data.Schedule|date:"mediumDate"}} </span>
+                    at <span class="text-primary fw-semibold"> {{data.Schedule|date:"shortTime"}} </span>
+                </td>
+                <td>
+                    <span *ngIf="getScByID(data, CurrentUser.ID)===null" class="text-warning">Not Updated</span>
+                    <span *ngIf="getScByID(data, CurrentUser.ID)!==null" class="text-success">
+                        {{getScByID(data, CurrentUser.ID)}}/{{data.TotalMarks}}
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #noData>
+        <p class="display-3">
+            No Data Found
+        </p>
+    </ng-template>
+</div>
+

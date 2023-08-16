@@ -1,0 +1,151 @@
+<!-- 
+
+  <div class=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-8">
+    <ng-container *ngFor="let item of CastList| paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+        <div class="max-w-sm overflow-hidden rounded-md bg-slate-200 p-4">
+            <div class=" flex justify-between">
+                <div class=" block">
+                    <p class="font-bold text-xl">{{item.name}}</p>
+                    <p class=" text-sm">
+                        <img style="width: 12px;" class=" inline me-1" src="https://cdn-icons-png.flaticon.com/512/657/657482.png" alt="">
+                        {{item.dob | date:"mediumDate"}}
+                    </p>
+                    <p class=" text-sm">
+                        <img style="width: 12px;" class=" inline me-1" src="https://cdn-icons-png.flaticon.com/512/3179/3179068.png" alt="">
+                        <span class=" capitalize">{{item.city}}, </span>
+                        <span class=" capitalize">{{item.state}}, </span>
+                        <span class=" capitalize">{{item.country}}</span>
+                        
+                        
+                    </p>
+                </div>
+                <img style="height: 120px; width:120px;" class=" rounded-lg" [src]="item.profileUrl" alt="Sunset in the mountains">
+            </div>
+            <p 
+                (click)="onReadClick(item)"
+                class=" font-semibold text-slate-600 hover:cursor-pointer text-center mt-4" 
+                type="button"
+                data-te-offcanvas-toggle
+                data-te-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+                data-te-ripple-init
+                data-te-ripple-color="light">
+                    Read More...
+                </p>
+
+          </div>
+    </ng-container>
+  </div>
+  <div class=" flex justify-center">
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+  </div>-->
+
+<div class=" h-[82vh]">
+
+
+  <button
+  class=" hidden"
+  type="button"
+  data-te-offcanvas-toggle
+  data-te-target="#offcanvasRight"
+  aria-controls="offcanvasRight"
+  data-te-ripple-init
+  data-te-ripple-color="light">
+  Toggle right offcanvas
+</button> 
+<p class="h-4">
+
+</p>
+<!-- Button to clear selection -->
+<button (click)="clearSelection()" class=" bg-slate-400 hover:bg-slate-300 border-1 border-slate-600 rounded-lg p-2 mb-2">Clear Selection</button>
+<!-- AG Grid Angular Component -->
+<div class="grid-container mx-8">
+
+
+<ag-grid-angular
+    style="width: 100%; height: 100%"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData$ | async"
+    [rowSelection]="'multiple'"
+    [animateRows]="true"
+    (gridReady)="onGridReady($event)"
+    (cellClicked)="onCellClicked($event)"
+  ></ag-grid-angular>
+</div>
+
+<div
+class="invisible fixed bottom-0 right-0 top-0 z-[1045] flex w-96 max-w-full translate-x-full flex-col border-none bg-white bg-clip-padding text-neutral-700 shadow-sm outline-none transition duration-300 ease-in-out [&[data-te-offcanvas-show]]:transform-none"
+tabindex="-1"
+id="offcanvasRight"
+aria-labelledby="offcanvasRightLabel"
+data-te-offcanvas-init>
+<div class="flex items-center justify-between p-4">
+  <h5
+    class="mb-0 font-semibold leading-normal text-3xl"
+    id="offcanvasRightLabel">
+    Cast Detail
+  </h5>
+  <button
+    type="button"
+    class="box-content rounded-none border-none opacity-50 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+    data-te-offcanvas-dismiss>
+    <span
+      class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </span>
+  </button>
+</div>
+<div class=" p-4">
+    <div class=" flex justify-between">
+        <div class=" block">
+            <p class="font-bold text-xl">{{tempCast.name}}</p>
+            <p class=" text-sm">
+                <img style="width: 12px;" class=" inline me-1" src="https://cdn-icons-png.flaticon.com/512/657/657482.png" alt="">
+                {{tempCast.dob | date:"mediumDate"}}
+            </p>
+            <p class=" text-sm">
+                <img style="width: 12px;" class=" inline me-1" src="https://cdn-icons-png.flaticon.com/512/3179/3179068.png" alt="">
+                <span class=" capitalize">{{tempCast.city}}, </span>
+                <span class=" capitalize">{{tempCast.state}}, </span>
+                <span class=" capitalize">{{tempCast.country}}</span>                 
+            </p>
+        </div>
+        <img style="height: 120px; width:120px;" class=" rounded-lg" [src]="tempCast.profileUrl" alt="Sunset in the mountains">
+    </div>
+
+    <div class="mt-4">
+              
+        <p class="text-gray-700 text-base text-justify">
+          {{tempCast.description}}
+        </p>
+      </div>
+
+      <div class=" flex justify-between mt-4">
+        <button class="bg-transparent hover:bg-neutral-500 text-neutral-700 font-semibold hover:text-white p-1 w-16 border border-neutral-500 hover:border-transparent rounded">
+            Edit
+          </button>
+
+          <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white p-1 w-16 border border-red-500 hover:border-transparent rounded">
+            Delete
+          </button>
+    </div>
+
+
+</div>
+</div>
+
+
+</div>

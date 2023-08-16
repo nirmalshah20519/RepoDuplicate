@@ -1,0 +1,36 @@
+<div [formGroup]="form">
+  
+    <div [ngSwitch]="question.controlType">
+  
+      <input class=" form-control mb-3" *ngSwitchCase="'textbox'" [formControlName]="question.key"
+              [id]="question.key" [type]="question.type" [placeholder]="question.label">
+      <div *ngSwitchCase="'dropdown'" class=" mb-3">
+        <p class=" mb-0 fw-semibold">Select {{question.label}}</p>
+        <select class=" form-select" [id]="question.key"  [formControlName]="question.key">
+          <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+        </select>
+      </div>
+      <div *ngSwitchCase="'checkbox'" class=" form-check-inline mb-3">
+        <p class=" mb-0 fw-semibold">Select {{question.label}}</p>
+        <ng-container *ngFor="let opt of question.options;let i=index;" [formArrayName]="question.key">
+            <input class=" form-check-input me-1" type="checkbox" [checked]="opt.value"  [id]="opt.key" [formControlName]="i" >
+            <label class=" form-check-label  me-3" [for]="opt.key">
+                {{opt.key}}
+            </label>
+        </ng-container>
+      </div>
+
+      <div *ngSwitchCase="'radio'" >
+        <p class=" mb-0 fw-semibold">Select {{question.label}}</p>
+        <ng-container *ngFor="let opt of question.options">
+            <input class=" form-check-input me-2" type="radio" [value]="opt.key"  [name]="question.key" [formControlName]="question.key" >
+            <label class=" form-check-label me-4">
+                {{opt.value}}
+            </label>
+        </ng-container>
+      </div>
+
+  <div>
+    
+  </div>
+

@@ -1,0 +1,58 @@
+<!-- <h1>
+  Hello World
+</h1>
+<p>
+  Greetings {{name}}
+</p> -->
+
+<!-- <div class="row row-cols-1 row-cols-md-3 g-4">
+  <ng-container *ngFor="let p of Products">
+    <div class="col">
+      <div class="card p-2" style="height: 24rem;">
+        <div class=" d-flex justify-content-between">
+          <img [src]="p.image" class="card-img-top w-25 me-2" style="height: 15vh;" [alt]="p.title">
+          <div class="w-75">
+            <h5 class="card-title">{{p.title}}</h5>
+            <p class=" fs-4 text-success">
+              {{p.price|currency:'INR'}}
+            </p>
+          </div>
+        </div>
+        <div class="card-body">
+          
+          <p>
+            
+          </p>
+          <p class="card-text">{{p.description}}</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div> -->
+
+<div class="carousel">
+  <div ngxSlickCarousel [attr.config]="slickCarouselConfig">
+    <div class="card" *ngFor="let p of Products">
+      <div class="col">
+        <div class="card p-2" style="height: 24rem;">
+          <div class=" d-flex justify-content-between">
+            <img [src]="p.image" class="card-img-top w-25 me-2" style="height: 15vh;" [alt]="p.title">
+            <div class="w-75">
+              <h5 class="card-title">{{p.title}}</h5>
+              <p class=" fs-4 text-success">
+                {{p.price|currency:'INR'}}
+              </p>
+            </div>
+          </div>
+          <div class="card-body">
+            
+            <p>
+              
+            </p>
+            <p class="card-text">{{p.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

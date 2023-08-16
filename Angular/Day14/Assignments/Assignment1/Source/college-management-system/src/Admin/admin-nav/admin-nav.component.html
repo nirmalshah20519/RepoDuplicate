@@ -1,0 +1,28 @@
+    <nav class="navbar navbar-expand-sm navbar-light bg-primary">
+        <div class="container">
+            <a class="navbar-brand h1" href="#">CMS <span class="fst-italic h6 text-warning">Admin Panel</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-between px-4" id="navbarID">
+                <div class="d-flex justify-content-start">                
+                    <div class="navbar-nav">
+                        <a class="nav-link" routerLink="./home" (click)="setCurrSub(undefined)" routerLinkActive="text-light h2">Home</a>
+                    </div>
+                    <div class="navbar-nav">
+                        <a class="nav-link" routerLink="./students" (click)="setCurrSub(undefined)" routerLinkActive="text-light h2">Student</a>
+                    </div>
+                    <div class="navbar-nav">
+                        <a class="nav-link" routerLink="./faculties" (click)="setCurrSub(undefined)" routerLinkActive="text-light h2">Faculty</a>
+                    </div>
+                    <div class="navbar-nav">
+                        <a class="nav-link" routerLink="./courses" (click)="setCurrSub(undefined)" routerLinkActive="text-light h2 " >Course <span class="h6 text-warning" *ngIf="CurrCourse!==undefined">({{CurrCourse}})</span> </a>
+                    </div>
+                </div>
+                <div class="navbar-nav">
+                    <a class="btn btn-sm btn-danger" (click)="handleLogout()" aria-current="page" >LogOut <small class="fw-bold text-warning">({{CurrentUser.UserID}})</small>  </a>
+                </div>
+            </div>
+        </div>
+    </nav>

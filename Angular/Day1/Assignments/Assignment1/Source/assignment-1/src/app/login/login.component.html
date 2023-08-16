@@ -1,0 +1,20 @@
+<div class="container p-5 bg-info">
+    <p class="display-1 fw-bold text-light">Login</p>
+    <div class="mb-3">
+      <label for="" class="form-label text-light">User ID</label>
+      <input type="text"
+        class="form-control" name="userId" id="" aria-describedby="helpId" placeholder="Enter ID" [(ngModel)]="id">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label text-light">Password</label>
+        <input type="password"
+          class="form-control" name="Passwd" id="" aria-describedby="helpId" placeholder="Password" [(ngModel)]="pwd">
+      </div>
+      <div [class]="class">
+        <p class="display-6 text-center text-light fw-semibold">{{resp}}</p>
+      </div>
+
+      <input name="" id="" class="btn btn-light" type="button" value="Login" (click)="login()">
+
+</div>

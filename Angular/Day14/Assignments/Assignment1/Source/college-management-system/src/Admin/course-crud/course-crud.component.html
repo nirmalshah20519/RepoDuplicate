@@ -1,0 +1,71 @@
+<div class="container p-4 h-75 overflow-auto">
+
+
+<button type="button" (click)="setFlag(false)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add Course
+</button>
+<ng-container *ngIf="courseList.length else nocourse">
+    <div class="table-responsive px-5 w-100">
+        <table class="table table-striped table-hover table-borderless table-primary align-middle">
+        <caption></caption>
+            <thead class="table-light">
+                <tr>
+                    <th>Course ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Manage</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider" *ngFor="let c of courseList">
+                    <tr class="table-primary table-striped-columns" >
+                        <td>{{c.CID}}</td>
+                        <td>{{c.Name}}</td>
+                        <td>{{c.Description}}</td>
+                        <td>
+                            <a class="btn btn-sm btn-outline-primary" [routerLink]="'./'+c.CID" (click)="setCurrSub(c.Name)" >Manage</a>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+</ng-container>
+<ng-template #nocourse>
+    <p class="display-1 text-center">No Course Found</p>
+</ng-template>
+
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form [formGroup]="Course">
+            <div class="modal-header">
+                <h5 *ngIf="!addUpdateFlag" class="modal-title" id="exampleModalLabel">Add Course</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                    <div class="mb-3">
+                        <label for="" class="form-label">Title</label>
+                        <input type="text"
+                          class="form-control" formControlName="Name" aria-describedby="helpId" placeholder="">
+                        <small *ngIf="Course.get('Name')?.errors?.['required'] && Course.get('Name')?.touched" class="form-text text-danger">* Course Title is required</small>
+                      </div>
+                      <div class="mb-3">
+                          <label for="" class="form-label">Description</label>
+                          <textarea rows="5" type="text"
+                            class="form-control" formControlName="Description" aria-describedby="helpId" placeholder=""></textarea>
+                          <small *ngIf="Course.get('Description')?.errors?.['required'] && Course.get('Description')?.touched" class="form-text text-danger">* Course Description is required</small>
+                        </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button *ngIf="!addUpdateFlag" [disabled]="Course.invalid" type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addCourse()">Save changes</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
